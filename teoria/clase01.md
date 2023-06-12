@@ -21,11 +21,6 @@
 
 - Es sencillo de aprender.
 
-- JavaScriot es de tipo débil y dinámico, por ejemplo si tenemos una variable **a** se puede inicializar como un **string** y luego asignarle un valor **number**:
-```JavaScript
-let a = 'hola'
-a = 10
-```
 
 ---
 
@@ -33,33 +28,79 @@ a = 10
 
 - Fue creado en 2012 por **Microsoft**, en sus aplicaciones muy grandes necesitaban el grado de seguridad de los tipos.
 
+- JavaScript es de tipo débil y dinámico, por ejemplo si tenemos una variable **a** se puede inicializar como un **string** y luego asignarle un valor **number**:
+```JavaScript
+let a = 'hola'
+a = 10
+```
+
+En cambio con TypeScript:
+
+```TypeScript
+let a:string = 'chau'
+// a = 2 esto no se puede hacer, ya se infiere es de tipo string no number
+```
+
+Ejemplo de una función con TypeScript:
+```TypeScript
+function suma(a:number, b:number):number {
+  return a+b
+}
+suma(2,3)
+```
+
+- El codigo se va 'autodocumentando', ya no es necesario escribir tanto explicando las funciones.
+
+
+- Añade: seguridad y robustez.
+
 ---
 
-## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Concepto inferir 1
+## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Concepto inferir 
+
+```TypeScript
+let saludo:string = 'hola mundo'
+// infiere que es de tipo string, no puede volver a tener reasignado un valor que no sea de string
+let nombre = 'María Eugenia' 
+```
 
 ---
 
-## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Uso de TypeScript 
-
----
-
-## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Menos documentación
-
----
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> TypeScript compilación
+
+**TS** funciona en tiempo de **compilación** y **JS** funciona en tiempo de **navegacion**
 
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Herramientas 
 
+- **VSC** esta creado con TS, ya lo tine nativo, por lo que si se escribe el código en VSC, ya nos va a ir marcando los errores. También tenemos el autocomplete.
+h
+- **TS** es capaz de observar como es y te dice su forma.
+
+- Hay una extensión en VSC: **Pretty TypeScript Errors** de yoavbls
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Tipos en TypeScript
 
----
+- string
 
-## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Concepto inferir 2
+- number
+
+- null
+
+- undefined
+
+- boolean
+
+- any, asi IGNORA el tipado de TS, por eso hay que evitarlo si o si
+
+- unknown, no sabemos cual es el tipo
+
+
+Para los tipos básicos no es necesario tipar cuando declaro las variables.
 
 ---
 
