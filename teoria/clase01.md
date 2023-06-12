@@ -2,11 +2,14 @@
 
 ---
 
-#·  <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> ¿Qué es TypeScript ?
+## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> ¿Qué es TypeScript ?
 
 Es JavaScript con una sintaxis para tipos.
 
 Es un superset de JavaScript.
+
+![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/01a67373-7b04-447d-9836-b789d43f9ee3)
+
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> ¿Por qué aprenderlo?
 
