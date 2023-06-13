@@ -9,6 +9,8 @@
 
 Dentro de la carpeta [**teoria**](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/teoria) está toda la explicación vista.
 
+Dentro de la carpeta [**practica**](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/practica) esta la práctica.
+
 ---
 
 
