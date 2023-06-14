@@ -10,7 +10,7 @@
 
 - No funciona en tiempo de ejecución, se compila y llega al navegador como JavaScript.
 
-<img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/01a67373-7b04-447d-9836-b789d43f9ee3" width="350" alt="typescript y javascript">
+<img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/01a67373-7b04-447d-9836-b789d43f9ee3" width="280" alt="typescript y javascript">
 
 
 ---
@@ -300,7 +300,7 @@ const thor2 = createHero({name:'Thor', age: 1500})
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Optional properties
 
-<img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/5edb50a4-7ccf-4916-9c0d-16d88549a1a6" width="350" alt="optional properties" />
+<img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/5edb50a4-7ccf-4916-9c0d-16d88549a1a6" width="480" alt="optional properties" />
 
 
 ```TypeScript
