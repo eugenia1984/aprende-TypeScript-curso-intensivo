@@ -263,8 +263,38 @@ Lo que NO puedo hacer con TS es agregarle un nuevo par key:value al objeto, si q
 
 
 ```TypeScript
+type Hero = {
+  name: string
+  age: number
+}
 
+let hero: Hero = {
+  name: 'Thor',
+  age: 1500
+}
+
+// hero.name= 1234434
+// esto no es posible porque ya infiere que name es string
+
+function createHero(name: string, age:number): Hero {
+  return { name, age  }
+}
+
+const thor = createHero('Thor', 1500)
 ```
+
+Otro modo, aca voy a tener que desestructurar:
+
+```TypeScript
+function createHero2(hero: Hero): Hero {
+  const {name, age} = hero
+  return { name, age  }
+}
+
+const thor2 = createHero({name:'Thor', age: 1500})
+```
+
+
 
 ---
 

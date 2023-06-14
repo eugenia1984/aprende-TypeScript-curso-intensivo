@@ -1,4 +1,4 @@
-/*********************** Tipos *******************************/
+/********************************** Tipos *****************************************/
 const number = 1
 const n: number = 2
 let cadenaDeTexto = 'hola' // si hacemoscadena. vemos todos los métodos de los string
@@ -6,20 +6,20 @@ cadenaDeTexto.toLowerCase()
 let nulo = null
 let indefinido: undefined = undefined
 
-/****************************** any ********************************/
+/************************************ any ******************************************/
 // ¿Que pasa cuando no puede inferir un tipo? ANY
 let cualquierCosa // any, IGNORA el tipado
 
 let noSeQueTipoEs: unknown
 noSeQueTipoEs = 'Soy un string'
 
-/********************* Inferencia de tipos *************************/ 
+/**************************** Inferencia de tipos ***********************************/ 
 // a y b os infiere como number
 const a = 1
 const b = 2
 const c = a + b // c también será number
 
-/**************************** Funciones *****************************/ 
+/********************************** Funciones ***************************************/ 
 // Los parametros de las funciones no tienen inferencia, si no tienen contexto
 function saludar(name: string) {
   console.log(`Hola ${ name }`)
@@ -65,7 +65,7 @@ const sumar = (num1: number, num2: number): number => a + b
 // primero indico los tipos y luego la arrow function
 const restar: (num1: number, num2: number) => number = (a, b) => { return a - b }
 
-/************************************* never *************************/ 
+/*************************************** never ***************************************/ 
 // Para funciones que sabemos que nunca van a devolver nada. 
 // Tienen un throw y ahi finaliza la función, 
 // nunca llega al return implícito, 
@@ -82,8 +82,39 @@ avengers.forEach(avenger => {
 })
 
 
-/***************************** Objects **************************/
-let hero = {
+/********************************** Objects ********************************/
+
+/********************** Type (alias) ***************************/
+// type Hero = {
+//   name: string
+//   age: number
+// }
+
+// let hero: Hero = {
+//   name: 'Thor',
+//   age: 1500
+// }
+
+// // hero.name= 1234434
+// // esto no es posible porque ya infiere que name es string
+
+// function createHero(name: string, age:number): Hero {
+//   return { name, age  }
+// }
+
+// function createHero2(hero: Hero): Hero {
+//   const {name, age} = hero
+//   return { name, age  }
+// }
+// const thor = createHero('Thor', 1500)
+
+/******************** Optional properties *****************/
+type Hero = {
+  name: string
+  age: number
+}
+
+let hero: Hero = {
   name: 'Thor',
   age: 1500
 }
@@ -91,8 +122,12 @@ let hero = {
 // hero.name= 1234434
 // esto no es posible porque ya infiere que name es string
 
-function createHero(name: string, age:number) {
+function createHero(name: string, age:number): Hero {
   return { name, age  }
 }
 
+function createHero2(hero: Hero): Hero {
+  const {name, age} = hero
+  return { name, age  }
+}
 const thor = createHero('Thor', 1500)
