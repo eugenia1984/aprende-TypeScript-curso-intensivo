@@ -217,3 +217,40 @@ const thor = createHero({ name: 'Thor', age: 1500 })
 thor.powerScale = 'planetary' // tiene que se un tipo de los que declare
 
 /*********************  Type indexes ************************/
+type HeroProperties2 = {
+  isActive?: boolean,
+  address: {
+    planet: string,
+    city: string
+  }
+}
+
+const addressHero: HeroProperties2['address'] = {
+  planet: 'Earth',
+  city: 'Madrid'
+}
+
+/****************** Type from value *****************/
+const address: {
+  planet: string,
+  city: string
+}
+
+// para crear un tipo a partir de una constante
+type Address = typeof address
+
+const addressTwitch: Address = {
+  planet: 'Mars',
+  city: 'Twitch'
+}
+
+/***************** Type from function return ***************/
+function createAddress() {
+  return {
+    planet: 'Tierra',
+    city: 'Barcelona'
+  }
+}
+
+// ReturnType -> quiero que me recuperes lo que devuelve la función que tengo entre los <>
+type Address2 = ReturnType<typeof createAddress>

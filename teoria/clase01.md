@@ -444,9 +444,20 @@ function createHero(hero: HeroBasicInfo): Hero {
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Type indexing
 
-
+Para poder reutilizar partes:
 ```TypeScript
+type HeroProperties2 = {
+  isActive?: boolean,
+  address: {
+    planet: string,
+    city: string
+  }
+}
 
+const addressHero: HeroProperties2['address'] = {
+  planet: 'Earth',
+  city: 'Madrid'
+}
 ```
 
 ---
@@ -455,16 +466,49 @@ function createHero(hero: HeroBasicInfo): Hero {
 
 
 ```TypeScript
+const address: {
+  planet: 'Earth',
+  city: 'Madrid'
+}
 
+// para crear un tipo a partir de una constante
+type Address = typeof address 
 ```
+
+**typeof** en JavaScript es para ver de que tipo es, pero en TypeScript es como un supra conjunto que hace muchas más cosas, extraemos los **tipos** (de un objecto, funciones, etc).
+
+```TypeScript
+const address: {
+  planet: string,
+  city: string
+}
+
+// para crear un tipo a partir de una constante
+type Address = typeof address
+
+const addressTwitch: Address = {
+  planet: 'Mars',
+  city: 'Twitch'
+}
+```
+
 
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Type from function return
 
 
-```TypeScript
+**ReturnType** -> quiero que me recuperes lo que devuelve la función que tengo entre los ``<>``
 
+```TypeScript
+function createAddress() {
+  return {
+    planet: 'Tierra',
+    city: 'Barcelona'
+  }
+}
+
+type Address2 = ReturnType<typeof createAddress>
 ```
 
 ---
