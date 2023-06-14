@@ -511,22 +511,78 @@ function createAddress() {
 type Address2 = ReturnType<typeof createAddress>
 ```
 
+Me permite extraer los tipos de cualquier funcion, para poder reutilizarlos en otro lado.
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Arrays
 
 
-```TypeScript
 
+Voy a crear un array vacio, que va a tener elementos de tipo **string**
+```TypeScript
+const languajes:string[] = []
+languajes.push('JavaScript')
 ```
+
+Lo cual no me va a permitir agregar un number, un booleano u otro dato que no sea string:
+
+```TypeScript
+// lenguajes.push(2)
+// lenguajes.push(false)
+```
+
+Otra sintaxis:
+```TypeScript
+const lenguages: Array<string>
+```
+
+Para que pueda tener tanto string como number:
+```TypeScript
+const languajes: (string | number)[] = []
+```
+
+Tambien puede ser un array de los tipos de datos
+```TypeScript
+const heroWithBasicInfo :HeroBasicInfo[] = []
+```
+
 
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Matrices y tuplas
 
 
-```TypeScript
+Para armar el Tres en raya (Ta-Te-Ti):
 
+```TypeScript
+type CellValue = 'X' | 'O' | ''
+```
+
+**TUPLA**, un array que tiene un limite fijado de longitud
+
+```TypeScript
+type GameBoard = [
+  [CellValue, CellValue, CellValue],
+  [CellValue, CellValue, CellValue],
+  [CellValue, CellValue, CellValue]
+]
+```
+GameBoard es una tupla, es un array,q eu adentro teine 3 elementos, cada uno de ellos es otro array con 3 elementos
+
+```TypeScript
+const gameBoard: GameBoard = [
+  ['X', 'O', 'X'],
+  ['O', 'X', 'O'],
+  ['X', '', 'X']
+]
+```
+
+-> Otro ejemplo con colores RGB:
+
+```TypeScript
+type RGB = [number, number, number]
+const rgb: RGB = [255, 255, 0] // 0 - 255
 ```
 
 ---

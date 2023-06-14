@@ -254,3 +254,42 @@ function createAddress() {
 
 // ReturnType -> quiero que me recuperes lo que devuelve la función que tengo entre los <>
 type Address2 = ReturnType<typeof createAddress>
+
+/********** Arrays ***********/
+const languajes: string[] = []
+// otra sintaxis -> const lenguages: Array<string>
+// para que sea de string o number -> const languajes: (string | number)[] = []
+languajes.push('JavaScript')
+
+// tambien puede ser un array de los tipos de datos
+const heroWithBasicInfo: HeroBasicInfo[] = []
+
+/************** Matrices y tuplas *******************/
+// Para el ejemplo del tres en raya(ta-te-ti), un array de arrays
+/*
+[
+ ['X', 'O', 'X'], // string[]
+ ['O', 'X', 'O'], // string[]
+ ['X', ' ', 'X'] // string[]
+]
+*/
+type CellValue = 'X' | 'O' | ''
+// GameBoard es una TUPLA, un array que tiene un limite fijado de longitud
+type GameBoard = [
+  [CellValue, CellValue, CellValue],
+  [CellValue, CellValue, CellValue],
+  [CellValue, CellValue, CellValue]
+]
+const gameBoard: GameBoard = [
+  ['X', 'O', 'X'],
+  ['O', 'X', 'O'],
+  ['X', '', 'X']
+]
+
+// Otro ejemplo con un useState
+type State = [string, (name:string) => void]
+const [hero, setHero]: State = useState('thor')
+
+// otro ejemplo con colores
+type RGB = [number, number, number]
+const rgb: RGB = [255, 255, 0] // 0 - 255
