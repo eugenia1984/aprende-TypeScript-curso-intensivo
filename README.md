@@ -9,6 +9,10 @@
 
 Dentro de la carpeta [**teoria**](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/teoria) está toda la explicación vista.
 
+**Clase 1**: ¿Por qué usarlo? y sus ventajas / ¿Para qué NO sirve? / Inferencia y tipos básicos / ¿Cómo usarlo en funciones? / Type Alias / Intersection y Union Types / Arrays y Tuplas
+
+**Clase 2**: ¿Cómo crear y extender tus tipos? / Enums / Type vs Interface / Clases / Genéricos / Utility Types
+
 Dentro de la carpeta [**practica**](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/practica) esta la práctica.
 
 ---

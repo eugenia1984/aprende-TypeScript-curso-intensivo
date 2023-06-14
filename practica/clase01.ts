@@ -1,4 +1,4 @@
-// Tipos
+/*********************** Tipos *******************************/
 const number = 1
 const n: number = 2
 let cadenaDeTexto = 'hola' // si hacemoscadena. vemos todos los métodos de los string
@@ -6,19 +6,20 @@ cadenaDeTexto.toLowerCase()
 let nulo = null
 let indefinido: undefined = undefined
 
+/****************************** any ********************************/
 // ¿Que pasa cuando no puede inferir un tipo? ANY
 let cualquierCosa // any, IGNORA el tipado
 
 let noSeQueTipoEs: unknown
 noSeQueTipoEs = 'Soy un string'
 
-// Inferencia de tipos
+/********************* Inferencia de tipos *************************/ 
 // a y b os infiere como number
 const a = 1
 const b = 2
 const c = a + b // c también será number
 
-// Funciones
+/**************************** Funciones *****************************/ 
 // Los parametros de las funciones no tienen inferencia, si no tienen contexto
 function saludar(name: string) {
   console.log(`Hola ${ name }`)
@@ -60,13 +61,15 @@ sayHiFromFunction((name: string) => {
 
 const sumar = (num1: number, num2: number): number => a + b
 
-
 // Otro modo de tipar
 // primero indico los tipos y luego la arrow function
 const restar: (num1: number, num2: number) => number = (a, b) => { return a - b }
 
-// never
-//Para funciones que sabemos que nunca van a devolver nada. Tienen un throw y ahi finaliza la función, nunca llega al return implícito, nunca termina de ejecutarse la función.
+/************************************* never *************************/ 
+// Para funciones que sabemos que nunca van a devolver nada. 
+// Tienen un throw y ahi finaliza la función, 
+// nunca llega al return implícito, 
+// nunca termina de ejecutarse la función.
 function throwError(message: string): never {
   if(message) throw new Error(message)
   throw new Error(message)
@@ -79,7 +82,7 @@ avengers.forEach(avenger => {
 })
 
 
-/**** Objects ******/
+/***************************** Objects **************************/
 let hero = {
   name: 'Thor',
   age: 1500
