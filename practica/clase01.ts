@@ -13,13 +13,13 @@ let cualquierCosa // any, IGNORA el tipado
 let noSeQueTipoEs: unknown
 noSeQueTipoEs = 'Soy un string'
 
-/**************************** Inferencia de tipos ***********************************/ 
+/**************************** Inferencia de tipos ***********************************/
 // a y b os infiere como number
 const a = 1
 const b = 2
 const c = a + b // c también será number
 
-/********************************** Funciones ***************************************/ 
+/********************************** Funciones ***************************************/
 // Los parametros de las funciones no tienen inferencia, si no tienen contexto
 function saludar(name: string) {
   console.log(`Hola ${ name }`)
@@ -65,13 +65,13 @@ const sumar = (num1: number, num2: number): number => a + b
 // primero indico los tipos y luego la arrow function
 const restar: (num1: number, num2: number) => number = (a, b) => { return a - b }
 
-/*************************************** never ***************************************/ 
+/*************************************** never ***************************************/
 // Para funciones que sabemos que nunca van a devolver nada. 
 // Tienen un throw y ahi finaliza la función, 
 // nunca llega al return implícito, 
 // nunca termina de ejecutarse la función.
 function throwError(message: string): never {
-  if(message) throw new Error(message)
+  if (message) throw new Error(message)
   throw new Error(message)
 }
 
@@ -108,28 +108,112 @@ avengers.forEach(avenger => {
 // }
 // const thor = createHero('Thor', 1500)
 
+/******************** Template Union Types *****************/
+// type HeroId = `${ string }-${ string }-${ string }-${ string }-${ string }`
+
 /******************** Optional properties *****************/
-type Hero = {
-  // readonly -> para que sea solo del tipo lectura, ojo no es inmutable
-  // al ser opcional al pasar a JavaScript no se ve en el objeto
-  readonly id?: number 
-  name: string
-  age: number
-  // ? -> opcional, puede tenerlo o no
-  isActive?: boolean 
+// type Hero = {
+//   // readonly -> para que sea solo del tipo lectura, ojo no es inmutable
+//   // al ser opcional al pasar a JavaScript no se ve en el objeto
+//   readonly id?: HeroId 
+//   name: string
+//   age: number
+//   isActive?: boolean // ? -> opcional, puede tenerlo o no
+// }
+
+// let hero: Hero = {
+//   name: 'Thor',
+//   age: 1500
+// }
+
+// function createHero(hero: Hero): Hero {
+//   const { name, age } = hero
+//   return { 
+//     id: crypto.randomUUID(), // es de tipo: HeroId 
+//     name, age, 
+//     isActive: true 
+//   }
+// }
+
+// const thor = createHero({ name: 'Thor', age: 1500 })
+// console.log(thor.isActive) // true
+// thorn.id = 12243434
+// no puedo hacerlo porque es solo de tipo lectura 
+
+/******************** Template Union Types *****************/
+type HexadecimalColor = `#${ string }`
+const color: HexadecimalColor = `#0033ff`
+// Asi me aseguro de tener simepre el #
+// const color2:HexadecimalColor = `0033ff`
+
+/******************** Union types ****************************/
+let annnn: number | string // puede ser de tipo number o string, es como un join en sql
+
+// type HeroId = `${ string }-${ string }-${ string }-${ string }-${ string }`
+// type HeroPowerScale = 'local' | 'planetary' | 'galactic' | 'universal' | 'multiversal' | 'omnipresent'
+
+// type Hero = {
+//   readonly id?: HeroId,
+//   name: string,
+//   age: number,
+//   isActive?: boolean,
+//   powerScale?: HeroPowerScale
+// }
+
+// let hero: Hero = {
+//   name: 'Thor',
+//   age: 1500
+// }
+
+// function createHero(hero: Hero): Hero {
+//   const { name, age } = hero
+//   return {
+//     id: crypto.randomUUID(),
+//     name, age,
+//     isActive: true
+//   }
+// }
+
+// const thor = createHero({ name: 'Thor', age: 1500 })
+// thor.powerScale = 'planetary' // tiene que se un tipo de los que declare
+
+
+/******************* Intersection Types *************************/
+// Para extender tipos, se crean tipos a travesde otros tipos
+type HeroId = `${ string }-${ string }-${ string }-${ string }-${ string }`
+type HeroPowerScale = 'local' | 'planetary' | 'galactic' | 'universal' | 'multiversal' | 'omnipresent'
+
+type HeroBasicInfo = {
+  name: string,
+  age: number,
 }
+
+type HeroProperties = {
+  readonly id?: HeroId,
+  name: string,
+  age: number,
+  isActive?: boolean,
+  powerScale?: HeroPowerScale
+}
+
+type Hero = HeroBasicInfo & HeroProperties
 
 let hero: Hero = {
   name: 'Thor',
   age: 1500
 }
 
-function createHero(hero: Hero): Hero {
-  const {name, age} = hero
-  return { name, age, isActive:true  }
-}
-const thor = createHero({name:'Thor', age:1500})
-console.log(thor.isActive) // true
+function createHero(hero: HeroBasicInfo): Hero {
+  const { name, age } = hero
 
-// thorn.id = 12243434
-// no puedo hacerlo porque es sol ode tipo lectura 
+  return {
+    id: crypto.randomUUID(),
+    name, age,
+    isActive: true
+  }
+}
+
+const thor = createHero({ name: 'Thor', age: 1500 })
+thor.powerScale = 'planetary' // tiene que se un tipo de los que declare
+
+/*********************  Type indexes ************************/

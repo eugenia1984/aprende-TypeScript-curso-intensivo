@@ -304,23 +304,22 @@ const thor2 = createHero({name:'Thor', age: 1500})
 <img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/5edb50a4-7ccf-4916-9c0d-16d88549a1a6" width="480" alt="optional properties" />
 
 
-```TypeScript
-
-```
-
-
-```TypeScript
-
-```
-
-```TypeScript
-
-```
-
-
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Optional chaining operator
+
+
+```TypeScript
+let name =  data?name
+```
+
+Si existe **data** entonces busco el valor de la key **name**
+
+
+Le puedo agregar un valor por defecto:
+```TypeScript
+thorn.id ?? 'No tiene valor'
+```
 
 ---
 
@@ -330,41 +329,161 @@ const thor2 = createHero({name:'Thor', age: 1500})
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Object freeze
 
+```TypeScript
+type Hero = {
+  readonly id?: number
+  name: string
+  age: number
+  isActive?: boolean // ? -> opcional, puede tenerlo o no
+}
+```
+
+El **id** al ser readonly es de tipo lectura, pero **no es inmutable**, al ser opcional al pasar a JavaScript no se ve en el objeto, para que realmente sea inmutable hay que utilizar JavaScript y el **object freeze**:
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Template union types
 
----
 
-## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Preguntas y respuestas 
+Creo el tipo HeroId para usarlo dentro de otro tipo(Hero)
+
+```TypeScript
+type HeroId = `${string}-${string}-${string}-${string}-${string}`
+
+type Hero = {
+  readonly id?: HeroId // es de tipo: HeroId 
+  name: string
+  age: number
+  isActive?: boolean 
+}
+
+function createHero(hero: Hero): Hero {
+  const { name, age } = hero
+  return { 
+    id: crypto.randomUUID(), // es de tipo: HeroId 
+    name, age, 
+    isActive: true 
+  }
+}
+```
+
+Un **type** puede ser una **RegEx**
 
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Union Types
 
+Es como un join en sql
+
+
+Ejemplo 1: puede ser de tipo number o string:
+```TypeScript
+let annnn: number | string 
+```
+
+Ejemplo 2: puede ser un string o el numero 2:
+```TypeScript
+let annnn: string | 2 
+// annnn = 3 va a dar error
+```
+
+Ejemplo 3:
+```TypeScript
+type HeroPowerScale = 'local' | 'planetary' | 'galactic' | 'universal' | 'multiversal' | 'omnipresent'
+
+type Hero = {
+  readonly id?: HeroId
+  name: string
+  age: number
+  isActive?: boolean
+  powerScale?: HeroPowerScale
+}
+```
+
+Para usar con animaciones, pueden ser booleanas o un nuemro, si es un número por defecto son 200ms
+```TypeScript
+const enableAnimationDuration:  boolean | number = 200
+```
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Intersection types
+
+Para extender tipos, se crean tipos a travesde otros tipos
+
+Es al reves del **union**(que es un OR), es un AND.
+
+```TypeScript
+type HeroBasicInfo = {
+  name: string,
+  age: number,
+}
+
+type HeroProperties = {
+  readonly id?: HeroId,
+  name: string,
+  age: number,
+  isActive?: boolean,
+  powerScale?: HeroPowerScale
+}
+
+type Hero = HeroBasicInfo & HeroProperties
+
+function createHero(hero: HeroBasicInfo): Hero {
+  const { name, age } = hero
+  
+  return {
+    id: crypto.randomUUID(),
+    name, age,
+    isActive: true
+  }
+}
+```
 
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Type indexing
 
+
+```TypeScript
+
+```
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Type from value y typeof
+
+
+```TypeScript
+
+```
 
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Type from function return
 
+
+```TypeScript
+
+```
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Arrays
 
+
+```TypeScript
+
+```
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Matrices y tuplas
+
+
+```TypeScript
+
+```
 
 ---
 

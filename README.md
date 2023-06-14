@@ -26,7 +26,7 @@ Dentro de la carpeta [**practica**](https://github.com/eugenia1984/aprende-TypeS
 
 - <img width="30" height="30" src="https://img.icons8.com/color/30/typescript.png" alt="typescript"/>**TypeScript**
 
-
+- **Visual Studio Code** y las extensiones **Error Lens** y **Pretty TypeScript Errors**
 
 
 ## Por favor: 🎁
