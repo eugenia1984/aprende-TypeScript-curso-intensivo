@@ -155,13 +155,51 @@ function saludoCompleto3(persona: { name:string, age:number }): number { // devu
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Tipar "arrow functions"
 
+Ojo esto esta sin tipar, es solo para indicar la parte del callback.
 
 ![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/efe91de5-ad93-45bf-bbd8-9f1667c6b400)
+
+OJO, no usar **Function** para tipar, es el **any** de las funciones, hay que evitarlo, hay que decir que funcion necesitamos
+
+```TypeScript
+const sayHiFromFunction = (fn: (name:string) => void) => {
+  return fn('Euge')
+}
+
+sayHiFromFunction((name: string) => {
+  console.log(`Hola ${name}`)
+})
+```
+
+**void** porque no tiene un **return**, si no usamos **void** devuelve **undefined** explicitamente. Si tengo void e igualmente devuelve algo, no hya problemas en la compilación.
 
 
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> never / void
+
+
+NEVER
+
+VOID
+
+```TypeScript
+const sayHiFromFunction = (fn: (name:string) => void) => {
+  return fn('Euge')
+}
+
+sayHiFromFunction((name: string) => {
+  console.log(`Hola ${name}`)
+})
+```
+
+```TypeScript
+
+```
+
+```TypeScript
+
+```
 
 ---
 

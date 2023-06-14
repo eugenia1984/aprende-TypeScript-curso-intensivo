@@ -50,10 +50,12 @@ function saludoCompleto3(persona: { name:string, age:number }): number { // devu
 // Funciones como parametro
 // Funciones son FIRST CLASS CITIZEN(ciudadanos de primera clase)
 // Es cun callback, una funcion que invoca a otra funcion
-const sayHiFromFunction = (fn) => {
+const sayHiFromFunction = (fn: (name:string) => void) => {
   return fn('Euge')
 }
 
-sayHiFromFunction((name) => {
+sayHiFromFunction((name: string) => {
   console.log(`Hola ${name}`)
 })
+
+const sumar = (num1:number, num2:number) => a+b 
