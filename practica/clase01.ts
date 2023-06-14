@@ -110,8 +110,13 @@ avengers.forEach(avenger => {
 
 /******************** Optional properties *****************/
 type Hero = {
+  // readonly -> para que sea solo del tipo lectura, ojo no es inmutable
+  // al ser opcional al pasar a JavaScript no se ve en el objeto
+  readonly id?: number 
   name: string
   age: number
+  // ? -> opcional, puede tenerlo o no
+  isActive?: boolean 
 }
 
 let hero: Hero = {
@@ -119,15 +124,12 @@ let hero: Hero = {
   age: 1500
 }
 
-// hero.name= 1234434
-// esto no es posible porque ya infiere que name es string
-
-function createHero(name: string, age:number): Hero {
-  return { name, age  }
-}
-
-function createHero2(hero: Hero): Hero {
+function createHero(hero: Hero): Hero {
   const {name, age} = hero
-  return { name, age  }
+  return { name, age, isActive:true  }
 }
-const thor = createHero('Thor', 1500)
+const thor = createHero({name:'Thor', age:1500})
+console.log(thor.isActive) // true
+
+// thorn.id = 12243434
+// no puedo hacerlo porque es sol ode tipo lectura 

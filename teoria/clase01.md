@@ -300,6 +300,21 @@ const thor2 = createHero({name:'Thor', age: 1500})
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Optional properties
 
+
+```TypeScript
+
+```
+
+
+```TypeScript
+
+```
+
+```TypeScript
+
+```
+
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Optional chaining operator
