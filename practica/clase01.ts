@@ -47,3 +47,13 @@ function saludoCompleto3(persona: { name:string, age:number }): number { // devu
   return age  // devuelve number
 }
 
+// Funciones como parametro
+// Funciones son FIRST CLASS CITIZEN(ciudadanos de primera clase)
+// Es cun callback, una funcion que invoca a otra funcion
+const sayHiFromFunction = (fn) => {
+  return fn('Euge')
+}
+
+sayHiFromFunction((name) => {
+  console.log(`Hola ${name}`)
+})

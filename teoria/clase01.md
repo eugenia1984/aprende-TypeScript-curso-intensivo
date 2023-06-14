@@ -106,9 +106,50 @@ Para los tipos básicos no es necesario tipar cuando declaro las variables.
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Funciones
 
+Los parametros de las funciones no tienen inferencia, si no tienen contexto
+
+```TypeScript
+function saludar(name: string) {
+  console.log(`Hola ${ name }`)
+}
+
+saludar('Pepe')
+```
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Tipar funciones parametros
+
+
+Si en los **parametros** tenemos un **objeto**, tneemos distintas formas de tiparlo...
+
+
+...1er opción:
+
+```TypeScript
+function saludoCompleto({ name, age }: { name: string, age: number }) {
+  console.log(`Hola ${ name }, tienen ${ age } años`)
+}
+```
+
+...2da forma de tiparlo:
+
+```TypeScript
+function saludoCompleto2(persona: { name:string, age:number }) {
+  const {name, age} = persona // si o si necesito desestructurar
+  console.log(`Hola ${ name }, tienen ${ age } años`)
+}
+```
+
+- También se puede tipar el **Return** de la función:
+
+```TypeScript
+function saludoCompleto3(persona: { name:string, age:number }): number { // devuelve number
+  const {name, age} = persona 
+  console.log(`Hola ${ name }, tienen ${ age } años`)
+  return age  // devuelve number
+}
+```
 
 ---
 
