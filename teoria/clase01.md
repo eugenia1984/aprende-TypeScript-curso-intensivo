@@ -151,6 +151,19 @@ function saludoCompleto3(persona: { name:string, age:number }): number { // devu
 }
 ```
 
+
+- Por definición las funciones **no tienen inferencia**, pero hay casos en los que si, en las **funciones anonimas**, según el contexto:
+
+
+```TypeScript
+const avengers = ['Spidey', 'Hulk', 'Avengers']
+avengers.forEach(avenger => {
+  console.log(avenger.toUpperCase())
+})
+```
+
+Dentro del console.log cuando tengo avengers. veo los metodos del string, TS con el **.forEach()** sabe qeu es un array de string e infiere que avenger es un string. Pasa con todas las funciones de array, por ejemplo con **.map()**
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Tipar "arrow functions"
@@ -174,6 +187,20 @@ sayHiFromFunction((name: string) => {
 **void** porque no tiene un **return**, si no usamos **void** devuelve **undefined** explicitamente. Si tengo void e igualmente devuelve algo, no hya problemas en la compilación.
 
 
+
+- Un modo de tipar las arrow functions
+
+```TypeScript
+const sumar = (num1: number, num2: number): number => a + b
+```
+
+
+- Otro modo de tipar las arrow functions. Primero indico los tipos y luego la arrow function.
+
+```TypeScript
+const restar: (num1: number, num2: number) => number = (a, b) => { return a - b } 
+```
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> never / void
@@ -181,7 +208,19 @@ sayHiFromFunction((name: string) => {
 
 NEVER
 
+
+Para funciones que sabemos que nunca van a devolver nada. Tienen un throw y ahi finaliza la función, nunca llega al return implícito, nunca termina de ejecutarse la función.
+
+```TypeScript
+function throwError(message: string): never {
+  if(message) throw new Error(message)
+  throw new Error(message)
+}
+```
+
 VOID
+
+Cuando la función no va a devolver nada, aunque puede tener el return implicito y llegar a devolver.
 
 ```TypeScript
 const sayHiFromFunction = (fn: (name:string) => void) => {
@@ -193,21 +232,39 @@ sayHiFromFunction((name: string) => {
 })
 ```
 
-```TypeScript
-
-```
-
-```TypeScript
-
-```
 
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Objetos
 
+Los objetos tienen inferencia de datos:
+
+```TypeScript
+let hero = {
+  name: 'Thor',
+  age: 1500
+}
+
+// hero.name= 1234434
+// hero.power = 100
+```
+
+-> ya infiere que **name** es de tipo **string** y **Age** es de tipo **number**. No puedo asignar un number a name que es string.
+
+Lo que NO puedo hacer con TS es agregarle un nuevo par key:value al objeto, si queiria agregar power me lo marca como error y avisa que no existe.
+
+
+**TS** nos hace  un **contrato** de nuestros objetos. Es una de las ventajas, ya que con javaScript podemos ir agregando a lo loco lo que queramos en el objeto.
+
+
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Type Alias
+
+
+```TypeScript
+
+```
 
 ---
 
