@@ -76,7 +76,7 @@ let nombre = 'María Eugenia'
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Herramientas 
 
 - **VSC** esta creado con TS, ya lo tine nativo, por lo que si se escribe el código en VSC, ya nos va a ir marcando los errores. También tenemos el autocomplete.
-h
+
 - **TS** es capaz de observar como es y te dice su forma.
 
 - Hay una extensión en VSC: **Pretty TypeScript Errors** de yoavbls
@@ -154,6 +154,10 @@ function saludoCompleto3(persona: { name:string, age:number }): number { // devu
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Tipar "arrow functions"
+
+
+![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/efe91de5-ad93-45bf-bbd8-9f1667c6b400)
+
 
 ---
 
