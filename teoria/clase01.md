@@ -170,7 +170,8 @@ Dentro del console.log cuando tengo avengers. veo los metodos del string, TS con
 
 Ojo esto esta sin tipar, es solo para indicar la parte del callback.
 
-![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/efe91de5-ad93-45bf-bbd8-9f1667c6b400)
+<img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/efe91de5-ad93-45bf-bbd8-9f1667c6b400" width="350" alt="arrow function" />
+
 
 OJO, no usar **Function** para tipar, es el **any** de las funciones, hay que evitarlo, hay que decir que funcion necesitamos
 
