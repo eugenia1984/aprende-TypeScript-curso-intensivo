@@ -90,6 +90,15 @@ function mostrarMensaje(tipoDeError) {
 
 En TS si tenemos **Enum**, se utiliza para una colección de datos finitos.
 
+
+![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/daee596e-0d4f-4c74-9924-9e671cc49d47)
+
+
+Si ahora agrego **const**:
+
+![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/64d821bd-bc10-44d1-b380-22a3bab827cd)
+
+
 ```TypeScript
 ```
 
