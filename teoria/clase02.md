@@ -99,15 +99,108 @@ Si ahora agrego **const**:
 ![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/64d821bd-bc10-44d1-b380-22a3bab827cd)
 
 
-```TypeScript
-```
+Aunque hay veces en que necesito que empiece por un número distinto al **0**, por eos les puedo dar el valor:
 
 
 ```TypeScript
+const enum ERROR_TYPES {
+  NOT_FOUND= 'notFound',
+  UNAUTHORIZED= 'unauthorized',
+  FORBIDDEN= 'forbidden'
+}
 ```
+
+### ¿Por qué no debería usar const?
+
+Siempre que se pueda utilizar **const** para no generar código demás, pero hay que utilizar sin const cuando se crea un componente que va al exterior, que se consume por fuera de mi aplicación.
+
 ---
 
+
+## Aserciones de tipo
+
+```TypeScript
+const canvas = document.getElementById('canvas') as HTMLCanvasElement
+const ctx = canvas.getContext('2d')
+```
+
+-> puede devolver: **null** si no lo encuentra o **HTMLElement** si lo encuentra
+
+- ¿Como sabe TS que estas recuperando un elemento ```<canvas />```?
+
+->  Necesitamos un tipo mas especifico: ```HTMLCanvasElement```
+
+Por eso el `as HTMLCanvasElement`
+
+OJO porque perdemos que puede ser null. Por ello es mejor hacer la **Asercion** luego de la comprobación.
+
+En vez de:
+
+```TypeScript
+const canvas = document.getElementById('canvas') as HTMLCanvasElement
+const ctx = canvas.getContext('2d')
+```
+
+
+Mejor:
+
+```TypeScript
+const canvas = document.getElementById('canvas') 
+
+if(canvas != null) {
+  const ctx = (canvas  as HTMLCanvasElement).getContext('2d')
+}
+```
+
+Pero todavìa podemos tener un error, si por ejmplo hacemos : `document.getElementById('span') ` no sabe que no es canvas, entonces es mejor:
+
+```TypeScript
+const canvas = document.getElementById('canvas') 
+
+// inferencia -> TS se da cuenta que dentro del IF ya solo el canvas va a poder ser un HTMLCanvasElement
+if(canvas != null && canvas instanceof HTMLCanvasElement) {
+  const ctx = (canvas).getContext('2d')
+}
+```
+
+`
+
+---
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Type vs Interface
+
+
+**typeof** -> para tipos: string, boolean, numbers(para tipos basicos)
+
+**insanceof** -> para instancias, para: Date, objetos, etc
+
+---
+
+## Fetching de data de API
+
+En vez de ir tipando manualmente, mejor:
+
+1- me copio la URL
+
+2- hago la peticion
+
+3- copio la respuesta
+
+4- voy a https://app.quicktype.io/
+
+5- Pego la respuesta, cambio el nombre, dejo JSON y a la derecha busco TS, Interface only, Verify JSON parse results at runtime, use types instead of interfaces
+
+6- y tengo todos los tipos de la API
+
+7- lo guarde enun archiv para usarlo en mi type en el archivo **data.mts**, si los Enums los paso a const veo que cuando se pase a JS NO TIENE NINGUNA VALDACION.
+
+Tengo la otra opción **TS Zod**, es una biblioteca con validacion de tipos (para validr en tiempo de ejecución, se va a ejecutar en JS y se va a validar).
+
+## Interface 
+
+Es muy similar a los **type**, pero ¿Que es una interfaz? Nos dice que forma debe tener, moldea el contrato, no nos dice el como
+
+```TypeScript
+```
 
 ---
 

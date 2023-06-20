@@ -8,13 +8,6 @@ type Hero2 = {
   isActive?: boolean 
 }
 
-const hero2: Hero2 = {
-  id: `123-456-789-123-567`,
-  name: 'Miles Morales',
-  age: 21,
-  isActive: true
-}
-
 function createHero2(hero: Hero2): Hero2 {
   const {name, age} = hero
   return {
@@ -25,13 +18,18 @@ function createHero2(hero: Hero2): Hero2 {
   }
 }
 
+const hero2: Hero2 = createHero2({
+  name: 'Miles Morales',
+  age: 21,
+}) 
+
 /************************ TUPLA ********************/
 type RGB2 = readonly [number, number, number]
 const black: RGB2 = [0, 0, 0]
 // Al tener el READONLLY no podria hacer: black.push(4)
 
-/********************* ENUMS ************************/
-enum ERROR_TYPES {
+/********************* Enums ************************/
+const enum ERROR_TYPES {
   NOT_FOUND= 'notFound',
   UNAUTHORIZED= 'unauthorized',
   FORBIDDEN= 'forbidden'
@@ -45,4 +43,44 @@ function mostrarMensaje(tipoDeError: ERROR_TYPES) {
   } else if(tipoDeError === ERROR_TYPES.FORBIDDEN) {
     console.log('No tienes permisos para acceder')
   }
+}
+
+/**************** Aserciones de tipos **********************/
+// puede devolver: null si no lo encuentra o HTMLElement si lo encuentra
+// ¿Como sabe TS que estas recuperando un elemento <canvas />?
+// Necesitamos un tipo mas especifico: HTMLCanvasElement
+
+//La PEOR forma:
+/*
+const canvas = document.getElementById('canvas') as HTMLCanvasElement
+const ctx = canvas.getContext('2d')
+*/
+
+//Un poco mejor, pero: document.getElementById('span') -> no daria error
+/*
+const canvas = document.getElementById('canvas')  
+if (canvas != null) {
+  const ctx = (canvas as HTMLCanvasElement).getContext('2d')
+}
+*/
+
+
+// La mejor opcion, con: instanceof HTMLCanvasElement
+const canvas = document.getElementById('canvas') 
+
+if(canvas != null && canvas instanceof HTMLCanvasElement) {
+  const ctx = canvas.getContext('2d')
+}
+
+/**************** Interfaces **************/
+interface Hero3 {
+  id: string
+  name: string
+  age: number
+}
+
+const hero3: Hero3 = {
+  id: '1',
+  name: 'Spiderman',
+  age: 30
 }
