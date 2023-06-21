@@ -197,14 +197,94 @@ Tengo la otra opción **TS Zod**, es una biblioteca con validacion de tipos (par
 
 ## Interface 
 
-Es muy similar a los **type**, pero ¿Que es una interfaz? Nos dice que forma debe tener, moldea el contrato, no nos dice el como
+Es muy similar a los **type**, pero ¿Que es una interfaz? Nos dice que forma debe tener, moldea el contrato, no nos dice el como. DEfinimos le **contrato de un objeto**, para especificar sus **propiedades** y **métodos**.
+
+- Pueden estar anidadas, una interfaz puede estar dentro de otra interfaz, por ejemplo:
 
 ```TypeScript
+interface Product {
+  id: number
+  name: string
+  price: number
+  quantity: number
+}
+
+interface ShoppingCart {
+  totalPrice: number
+  products: Product[]
+}
+
+const carrito: ShoppingCart = {
+  totalPrice: 100,
+  products: [
+    {
+      id: 1,
+      name: 'Product 1',
+      price: 100,
+      quantity: 1
+    }
+  ]
+}
+```
+
+- Algo que NO SE PUEDE HACER CON TYPE a la hora de extender y SI SE PUEDE HACER CON INTERFACE, puede **extender**, hereda los mismos atributos y metodos, más los suyos propios.
+
+
+
+```TypeScript
+interface Product {
+  id: number
+  name: string
+  price: number
+  quantity: number
+}
+
+interface Shoe extends Product {
+  size: number
+}
+```
+
+Los type si se pueden extender, pero se pueden añadir o hacer intersecciones, en cambio acá se peude extender. Si puedo combinar ambas, por ejemplo:
+
+
+```TypeScript
+interface ShoppingCart {
+  totalPrice: number
+  products: (Product | Shoe)[]
+}
+```
+
+- Hay dos formas para indicar métodos en las interfaces:
+
+Una forma:
+
+```TypeScript
+interface ShoppingCartOps {
+  add: (product: Product) => void,
+  remove: (id: number) => void,
+  claer: () => void
+}
+```
+
+Otra forma:
+
+```TypeScript
+interface ShoppingCartOps {
+  add(product: Product): void
+  remove(id: number): void
+  claer(): void
+}
 ```
 
 ---
 
 ## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Clases
+
+
+
+```TypeScript
+```
+
 
 ---
 

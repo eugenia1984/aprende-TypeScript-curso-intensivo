@@ -5,11 +5,11 @@ type Hero2 = {
   readonly id?: HeroId2
   name: string
   age: number
-  isActive?: boolean 
+  isActive?: boolean
 }
 
 function createHero2(hero: Hero2): Hero2 {
-  const {name, age} = hero
+  const { name, age } = hero
   return {
     id: crypto.randomUUID(),
     name,
@@ -21,7 +21,7 @@ function createHero2(hero: Hero2): Hero2 {
 const hero2: Hero2 = createHero2({
   name: 'Miles Morales',
   age: 21,
-}) 
+})
 
 /************************ TUPLA ********************/
 type RGB2 = readonly [number, number, number]
@@ -30,17 +30,17 @@ const black: RGB2 = [0, 0, 0]
 
 /********************* Enums ************************/
 const enum ERROR_TYPES {
-  NOT_FOUND= 'notFound',
-  UNAUTHORIZED= 'unauthorized',
-  FORBIDDEN= 'forbidden'
+  NOT_FOUND = 'notFound',
+  UNAUTHORIZED = 'unauthorized',
+  FORBIDDEN = 'forbidden'
 }
 
 function mostrarMensaje(tipoDeError: ERROR_TYPES) {
-  if(tipoDeError === ERROR_TYPES.NOT_FOUND) {
+  if (tipoDeError === ERROR_TYPES.NOT_FOUND) {
     console.log('No se encuentra el recurso')
   } else if (tipoDeError === ERROR_TYPES.UNAUTHORIZED) {
     console.log('No tienens permisos para acceder')
-  } else if(tipoDeError === ERROR_TYPES.FORBIDDEN) {
+  } else if (tipoDeError === ERROR_TYPES.FORBIDDEN) {
     console.log('No tienes permisos para acceder')
   }
 }
@@ -66,9 +66,9 @@ if (canvas != null) {
 
 
 // La mejor opcion, con: instanceof HTMLCanvasElement
-const canvas = document.getElementById('canvas') 
+const canvas = document.getElementById('canvas')
 
-if(canvas != null && canvas instanceof HTMLCanvasElement) {
+if (canvas != null && canvas instanceof HTMLCanvasElement) {
   const ctx = canvas.getContext('2d')
 }
 
@@ -77,10 +77,53 @@ interface Hero3 {
   id: string
   name: string
   age: number
+  saludar: () => void
 }
 
 const hero3: Hero3 = {
   id: '1',
   name: 'Spiderman',
-  age: 30
+  age: 30,
+  saludar: () => console.log('Hola')
+}
+
+// Pueden estar anidadas
+interface Product {
+  id: number
+  name: string
+  price: number
+  quantity: number
+}
+
+interface Shoe extends Product {
+  size: number
+}
+
+interface ShoppingCart {
+  totalPrice: number
+  products: (Product | Shoe)[]
+}
+
+interface ShoppingCartOps {
+  add: (product: Product) => void,
+  remove: (id: number) => void,
+  claer: () => void
+}
+
+// interface ShoppingCartOps {
+//   add(product: Product): void
+//   remove(id: number): void
+//   claer(): void
+// }
+
+const carrito: ShoppingCart = {
+  totalPrice: 100,
+  products: [
+    {
+      id: 1,
+      name: 'Product 1',
+      price: 100,
+      quantity: 1
+    }
+  ]
 }
