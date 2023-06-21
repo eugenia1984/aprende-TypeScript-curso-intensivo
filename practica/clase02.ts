@@ -127,3 +127,80 @@ const carrito: ShoppingCart = {
     }
   ]
 }
+
+/************ Narrowing *************/
+// Primer modo(basico)
+function mostrarLongitud(objeto: number | string) {
+  if(typeof objeto === 'string') {
+    return objeto.length
+  }
+  return objeto.toString().length
+}
+
+mostrarLongitud('1')
+
+// Sgundo modo
+interface Mario  {
+  company: 'Nintendo',
+  nombre: string,
+  saltar: () => void
+}
+
+interface Sonic {
+  company: 'Sega',
+  nombre: string,
+  correr: () => void
+}
+
+type Personaje = Mario | Sonic
+
+function jugar(personaje: Personaje) {
+  console.log(personaje.nombre)
+  console.log(personaje.company)
+  // correr o saltar depende si es Mario o Sonic
+  if(personaje.company === 'Nintendo') {
+    personaje.saltar() // <- este es Mario
+    return
+  }
+  if(personaje.company === 'Sega') {
+    personaje.correr() // <- este es Sonic
+    return
+  }
+}
+
+/***************** class ********************/
+import {type IAvenger} from './types.d'
+class Avenger implements IAvenger {
+  // tengo que declarar las propiedades
+  name: string
+  powerScore: number
+  wonBattles: number 
+  age: number
+  battle: (enemy:IAvenger , win: boolean) => {
+    // if(win) {
+    //   this.wonBattles++
+    //   this.powerScore += 5
+    // } else {
+    //   this.powerScale -= 5
+    // }
+  }
+
+  constructor(name: string, powerScore: number) {
+    this.name = name
+    this.powerScore = powerScore
+  }
+
+  get FullName() {
+    return `${this.name}, of power ${this.powerScore}`
+  }
+
+  set power(newPower: number) {
+    if(newPower <= 100) {
+      this.powerScore = newPower
+    } else {
+      throw new Error('Power score cannot be more then 100')
+    }
+  }
+}
+
+const avengers = new Avenger('Spidey', 80)

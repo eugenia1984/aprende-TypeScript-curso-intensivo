@@ -276,22 +276,201 @@ interface ShoppingCartOps {
 }
 ```
 
----
-
-## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Clases
-
-
+- Lo que tiene de contra es que podemos escribir sus métodos más de una vez, por lo que estaríams modificando, por ejemplo:
 
 ```TypeScript
+interface ShoppingCartOps {
+  add: (product: Product) => void,
+  remove: (id: number) => void,
+}
+
+interface ShoppingCartOps {
+  claer: () => void
+}
+```
+
+De este modo nos podemos equivocar, y reescribir un mismo método, puede dar errores, esto con los types no ocurre. -> **una de las diferrencias más importantes**
+
+### ¿Interfaces o Types?
+
+Depende. En la documentación de TypeScript nombra la diferencia de lo de poder extenderse que tienen las interfaces y lo malo de que podes reescribir sin querer los métodos en la interfaz.
+
+La **interfazce** siempre habla de un **objeto**, nunca podriamso hacer esto de : `type RGB:number[]`, no podria hacer un array, siemre es un objeto. Con una interface tampoco podría hacer esto: `type HeroId = ${number}-${number}` para luego poder utilizar este tipo en un atributo id de una interface Hero.
+
+En general siemre intertar utilizar **type**, se entiende bien, son versatiles, pero cuando se trabaja con **object** o **class** ahi si puede ser que se necesite **interface**.
+
+---
+
+## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/>  Narrowing
+
+Hacemos como un embudo, nos aseguramos que vamos perdiendo los tipos
+
+- Primer ejemplo, con validaciones de if typeof, similar a lo que vimso con canva, pero es muy básica
+
+```TypeScript
+function mostrarLongitud(objeto: number | string) {
+  if(typeof objeto === 'string') {
+    return objeto.length
+  }
+  return objeto.toString().length
+}
+
+mostrarLongitud('1')
+```
+
+Segundo modo, usando las **propiedades discriminantes** si es Mario la company es Nintendo y si es Sonic la company es Sega, uso esto para validar en vez de los typeof:
+
+```TypeScript
+interface Mario  {
+  company: 'Nintendo',
+  nombre: string,
+  saltar: () => void
+}
+
+interface Sonic {
+  company: 'Sega',
+  nombre: string,
+  correr: () => void
+}
+
+type Personaje = Mario | Sonic
+
+function jugar(personaje: Personaje) {
+  console.log(personaje.nombre)
+  console.log(personaje.company)
+  // correr o saltar depende si es Mario o Sonic
+  if(personaje.company === 'Nintendo') {
+    personaje.saltar() // <- este es Mario
+    return
+  }
+  if(personaje.company === 'Sega') {
+    personaje.correr() // <- este es Sonic
+    return
+  }
+}
+```
+
+Y en el caso de que no tuvieramos el atributo company, por lo que no contaríamos con las propiedades discriminantes, se hace de otro modo, por fuera hacemos una función para ver si es Mario o Sonic, con **type guard**.
+
+Creamos la funcion checkIsSOnic que **discrimina el type** y lo hacemos a través de uan propiedad que no sabemos si existe o no, doy por sentadoq eu es Sonic, que es el unico que puede correr, y ahi vemos.
+
+```TypeScript
+interface Mario  {
+  nombre: string,
+  saltar: () => void
+}
+
+interface Sonic {
+  nombre: string,
+  correr: () => void
+}
+
+type Personaje = Mario | Sonic
+
+// type guard
+// dejame comprobar si personaje es Sonic
+// y esta funcion determina si es Sonic o no
+function checkIsSonic(personaje: Personaje):personaje is Sonic {
+  retunr (personaje as Sonic).correr !== undefined 
+}
+
+function jugar(personaje: Personaje) {
+  if(checkIsSonic(personaje)) {
+    personaje.correr() 
+  }
+}
+```
+
+OJO los type words siempre que se puede hay que evitarlo, porque si tuviera otro personaje necesitaría otro metodo más.
+
+
+---
+
+## Never
+
+```TypeScript
+function fn(x: string | number) { 
+  if(typeof x === 'string'){
+    // x es string
+    x.toUpperCase()
+  } else if (typeof x === 'number') {
+    // x es number
+    x.toFixed(2)
+  } else {
+    x // never porque nunca llega
+  }
+}
 ```
 
 
 ---
 
-## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Genéricos
+## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Clases
 
----
+- Tengo que aclarar los tipos en las propiedades y les puedo dar un valor inciial
 
-## <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Utility Types
+```TypeScript
+class Avenger {
+  name: string
+  powerScore: number = 0
 
----
+  constructor(name: string, powerScore: number) {
+    this.name = name
+    this.powerScore = powerScore
+  }
+
+  get FullName() {
+    return `${this.name}, of power ${this.powerScore}`
+  }
+
+  set power(newPower: number) {
+    if(newPower <= 100) {
+      this.powerScore = newPower
+    } else {
+      throw new Error('Power score cannot be more than 100')
+    }
+  }
+}
+
+const avengers = new Avenger('Spidey', 80)
+```
+
+**modificadores de acceso** -> /por default si no tengo nada es **public**, otro que hay es el **protected** las clases heredadas tambien acceden y el más restrictivo es **private**.
+
+```TypeScript
+class Avenger {
+  name: string
+  private powerScore: number = 0 // atributo de acceso private
+
+  constructor(name: string, powerScore: number) {
+    this.name = name
+    this.powerScore = powerScore
+  }
+
+  get FullName() {
+    return `${this.name}, of power ${this.powerScore}`
+  }
+
+  set power(newPower: number) {
+    if(newPower <= 100) {
+      this.powerScore = newPower
+    } else {
+      throw new Error('Power score cannot be more then 100')
+    }
+  }
+}
+
+const avengers = new Avenger('Spidey', 80)
+```
+
+También puedo tener interfaces, lo que si al tener los atributos/propiedades en una interfaz, no los puedo inicializar, ni puedo agregar una nueva propiedad que no este en al interfaz
+
+
+TS tiene HERENCIA MULTIPLE; s epuede implementar más de una Interface.
+
+Puedo declarar una rchivo **types.d.ts**, con **.d** por definicion, y ahi tener mis interfaces o types que voy a implementar en mis clases.
+
+Por más que **implemento** una interface, tengo que volver a **declarar los atributos** en mi clase.
+
+```TypeScript
+```
