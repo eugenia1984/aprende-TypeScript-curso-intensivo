@@ -17,6 +17,8 @@ Dentro de la carpeta [**teoria**](https://github.com/eugenia1984/aprende-TypeScr
 
 Dentro de la carpeta [**practica**](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/practica) esta la práctica.
 
+:book: [Libro de TypeScript](https://github.com/gibbok/typescript-book)
+
 ---
 
 
