@@ -1,1 +1,1 @@
-# :computer: Cursod e TypeScript de OpenBootcamp
+# :computer: Curso de TypeScript de OpenBootcamp
