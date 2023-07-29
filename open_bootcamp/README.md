@@ -91,8 +91,12 @@ y desde consola lo ejecuto: `npm run tsNode`, asi se va a transpilar y ejecutar 
 
 Y agrego un script en el package.json para poder ejecutarlo: `"start": "nodemon"`.
 
-Ahora con: `npm run start` lo corremos
+Ahora con: `npm run start` lo corremos.
 
-8. Con ESLint le ponemos normas/ reglas para que todos desarrollemos igual, sea más mantenible.
+Con `ctrl+c` paro la ejecución.
+
+8. Creamos otro script para el build, en el package.json, en al aprte de script: `"transpilation": "tsc"`. Y lo corremos `npm run transpilation`
+
+9. Con ESLint le ponemos normas/ reglas para que todos desarrollemos igual, sea más mantenible.
 
 ---

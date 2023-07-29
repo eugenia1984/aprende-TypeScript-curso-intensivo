@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsNode": "cd src && ts-node index.ts",
-    "start": "nodemon"
+    "start": "nodemon",
+    "transpilation": "tsc"
   },
   "repository": {
     "type": "git",
