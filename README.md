@@ -1,6 +1,6 @@
 # <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Aprende TypeScript: curso intensivo
 
-:computer: El curso de **TypeScript** con **Midu**
+El curso de **TypeScript** con **Midu**
 
 ---
 
@@ -18,6 +18,8 @@ Dentro de la carpeta [**teoria**](https://github.com/eugenia1984/aprende-TypeScr
 Dentro de la carpeta [**practica**](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/practica) esta la práctica.
 
 :book: [Libro de TypeScript](https://github.com/gibbok/typescript-book)
+
+*Extra*: [El curso de TypeScript de OpenBootcamp](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/open_bootcamp)
 
 ---
 
