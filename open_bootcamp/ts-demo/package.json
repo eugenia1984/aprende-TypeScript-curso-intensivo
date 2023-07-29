@@ -1,0 +1,31 @@
+{
+  "name": "ts-demo",
+  "version": "1.0.0",
+  "description": "Proyecto de ejemplo para el desarrollo con TS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo.git"
+  },
+  "keywords": [
+    "ts",
+    "typescript",
+    "frontend",
+    "javascript"
+  ],
+  "author": "Maria Eugenia Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/issues"
+  },
+  "homepage": "https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo#readme",
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}
