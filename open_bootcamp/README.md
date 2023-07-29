@@ -8,7 +8,7 @@
 
 - [**TypeScript**](https://www.typescriptlang.org/), es un superset de JavaScript
 
-- **Visual Studio Code**
+- **Visual Studio Code**, extensiones recomendadas: **material icon** para los iconos en los archivos, **JavaScript and TypeScript Nightly**, **TypeScript Hero**, **ESLint**, **npm** y **npm intellisense**, **Path Intellisense**, **Rainbow Brackets**
 
 ---
 
