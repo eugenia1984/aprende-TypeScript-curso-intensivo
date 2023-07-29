@@ -8,7 +8,7 @@
 
 - [**TypeScript**](https://www.typescriptlang.org/), es un superset de JavaScript
 
-- **Visual Studio Code**, extensiones recomendadas: **material icon** para los iconos en los archivos, **JavaScript and TypeScript Nightly**, **TypeScript Hero**, **ESLint**, **npm** y **npm intellisense**, **Path Intellisense**, **Rainbow Brackets**
+- **Visual Studio Code**, extensiones recomendadas: **material icon** para los iconos en los archivos, **JavaScript and TypeScript Nightly**, **TypeScript Hero**, **ESLint**, **npm** y **npm intellisense**, **Path Intellisense**, **Rainbow Brackets**, **TODO Highligh**, **TODO Tree**
 
 ---
 
@@ -75,6 +75,24 @@ Y ahora en el packege.json veo:
 
 5. Creamos la carpeta **src** donde tendremos el codigo fuente del proyecto. Y dentro el **index.ts**
 
-6. Con ESLint le ponemos normas/ reglas para que todos desarrollemos igual, sea más mantenible.
+6. Agrego un script para ejecutar ts-node: `"tsNode": "cd src && ts-node index.ts"`
+y desde consola lo ejecuto: `npm run tsNode`, asi se va a transpilar y ejecutar para ver por consola.
+
+7. Aprovechamos **nodemon** y desde la raiz del proyecto (ts-demo) creamos un archivo **nodemon.json**
+
+`
+{
+  "watch": ["src"],
+  "extensions": ".ts, .js",
+  "ignore": [],
+  "exec": "ts-node ./src/index.ts"
+}
+`
+
+Y agrego un script en el package.json para poder ejecutarlo: `"start": "nodemon"`.
+
+Ahora con: `npm run start` lo corremos
+
+8. Con ESLint le ponemos normas/ reglas para que todos desarrollemos igual, sea más mantenible.
 
 ---
