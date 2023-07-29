@@ -73,4 +73,8 @@ Y ahora en el packege.json veo:
 
 -> **--noImplicitAny true**
 
+5. Creamos la carpeta **src** donde tendremos el codigo fuente del proyecto. Y dentro el **index.ts**
+
+6. Con ESLint le ponemos normas/ reglas para que todos desarrollemos igual, sea más mantenible.
+
 ---
