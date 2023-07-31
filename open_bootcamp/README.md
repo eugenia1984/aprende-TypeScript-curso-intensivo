@@ -1,20 +1,27 @@
 # :computer: Curso de TypeScript de OpenBootcamp
 
-## Herramientas
+[https://github.com/gorkavillara/curso-typescript-05-junio/tree/tema-01-introduccion](https://github.com/gorkavillara/curso-typescript-05-junio/tree/tema-01-introduccion) es el repositorio en GitHub donde subieron el código por si tenemos dudas.
 
-- [**Node**](https://nodejs.org/es), con `node --version` vemos el númeor de versión y reconfirmamos que lo tenemos instalado
+---
+## <img width="40" height="40" src="https://img.icons8.com/stickers/40/maintenance.png" alt="maintenance"/> Herramientas
 
-- [**npm**](https://www.npmjs.com/) el gestor de paquetes para isntalar las dependencias
+- [<img width="40" height="40" src="https://img.icons8.com/color/40/nodejs.png" alt="nodejs"/> **Node**](https://nodejs.org/es), con `node --version` vemos el númeor de versión y reconfirmamos que lo tenemos instalado
 
-- [**TypeScript**](https://www.typescriptlang.org/), es un superset de JavaScript
+- [<img width="40" height="40" src="https://img.icons8.com/color/40/npm.png" alt="npm"/> **npm**](https://www.npmjs.com/) el gestor de paquetes para isntalar las dependencias
 
-- **Visual Studio Code**, extensiones recomendadas: **material icon** para los iconos en los archivos, **JavaScript and TypeScript Nightly**, **TypeScript Hero**, **ESLint**, **npm** y **npm intellisense**, **Path Intellisense**, **Rainbow Brackets**, **TODO Highligh**, **TODO Tree**
+- [<img width="40" height="40" src="https://img.icons8.com/color/40/typescript.png" alt="typescript"/> **TypeScript**](https://www.typescriptlang.org/), es un superset de JavaScript
+
+- <img width="40" height="40" src="https://img.icons8.com/color/40/visual-studio-code-2019.png" alt="visual-studio-code-2019"/> **Visual Studio Code**, extensiones recomendadas: **material icon** para los iconos en los archivos, **JavaScript and TypeScript Nightly**, **TypeScript Hero**, **ESLint**, **npm** y **npm intellisense**, **Path Intellisense**, **Rainbow Brackets**, **TODO Highligh**, **TODO Tree**
+
 
 ---
 
-## ¿Qué hacemos?
+
+## <img width="40" height="40" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/40/external-command-line-computer-science-flaticons-lineal-color-flat-icons.png" alt="external-command-line-computer-science-flaticons-lineal-color-flat-icons"/> ¿Qué hacemos?
+
 
 1. `mkdir ts-demo` para crear la carpeta
+
 
 2. `npm init` para iniciar un proyecto con el archivo package.json asi se instalan las dependencias. Si utilizamos `npm init -y` le decimos yes a todo por defecto, pero lo vamos a crear manual, con el **menu de preguntas**:
 
@@ -40,6 +47,7 @@
 
 - Is this OK? (yes)
 
+
 3. Agregamos dependencias con npm: `npm i --save-dev @types/node nodemon ts-node typescript`, porque son heramientas de **entorno de desarrollo**.
 
 - [@types/node](https://www.npmjs.com/package/@types/node)
@@ -61,11 +69,14 @@ Y ahora en el packege.json veo:
 }
 ```
 
+
 4. **tsconfig** para tener el archivo de configuración de TypeScript, para indicar como se va a transpilar de TypeScript a JavaScript. Lo inicializamos:
 
-`npx tsc --init --rootDir build --esModuleInterop --resolveJsonModule --lib es6 --module commonjs --allowjs true --noImplicitAny true`
+`npx tsc --init --outDir build --rootDir src --esModuleInterop --resolveJsonModule --lib es6 --module commonjs --allowjs true --noImplicitAny true`
 
--> **--rootDir build** el codigo compilado va a ir al directorio build
+-> **--outDir build** el codigo compilado va a ir al directorio build
+
+-> **rootDir src**
 
 -> **--lib es6** para usar ECMAScript6
 
@@ -73,12 +84,16 @@ Y ahora en el packege.json veo:
 
 -> **--noImplicitAny true**
 
+
 5. Creamos la carpeta **src** donde tendremos el codigo fuente del proyecto. Y dentro el **index.ts**
+
 
 6. Agrego un script para ejecutar ts-node: `"tsNode": "cd src && ts-node index.ts"`
 y desde consola lo ejecuto: `npm run tsNode`, asi se va a transpilar y ejecutar para ver por consola.
 
+
 7. Aprovechamos **nodemon** y desde la raiz del proyecto (ts-demo) creamos un archivo **nodemon.json**
+
 
 `
 {
@@ -89,14 +104,20 @@ y desde consola lo ejecuto: `npm run tsNode`, asi se va a transpilar y ejecutar 
 }
 `
 
+
 Y agrego un script en el package.json para poder ejecutarlo: `"start": "nodemon"`.
+
 
 Ahora con: `npm run start` lo corremos.
 
+
 Con `ctrl+c` paro la ejecución.
 
-8. Creamos otro script para el build, en el package.json, en al aprte de script: `"transpilation": "tsc"`. Y lo corremos `npm run transpilation`
+
+8. Creamos otro script para el build, en el package.json, en la parte de script: `"transpilation": "tsc"`. Y lo corremos `npm run transpilation`
+
 
 9. Con ESLint le ponemos normas/ reglas para que todos desarrollemos igual, sea más mantenible.
+
 
 ---

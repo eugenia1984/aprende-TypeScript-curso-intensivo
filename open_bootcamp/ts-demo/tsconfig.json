@@ -4,11 +4,14 @@
     "lib": ["es6"],
     /*Modules*/
     "module": "commonjs",
-    "rootDir": "build",
+    "outDir": "build" ,
+    "rootDir": "src",
     "resolveJsonModule": true,
     /*JavaScript Support*/
     "allowJs": true,
     /*Complemteness*/
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    /* Type Checking */
+    "strict": true,  
   }
 }
