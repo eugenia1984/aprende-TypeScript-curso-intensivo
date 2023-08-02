@@ -1,10 +1,15 @@
 // Esto es un comentario en TS, igual que en JS
 
 /**
- * Asi podemos documentar en TS nuestros proyectos: funciones, componentes, etc
+ * Asi podemos documentar en TS nuestros proyectos: 
+ * funciones, componentes, etc
  */
 
-/*****  Declaración de variables *****/
+/***************************************************************/
+/********************  Tipado  de  datos  **********************/
+/**************************************************************/
+
+/**************  Declaración de variables *******************/
 // tipado inferido, infiere que es de tipo string
 let firstName = 'María Eugenia'
 // no voy a poder asignarle otro tipo de valor, como por ejemplo: firstName = 10
