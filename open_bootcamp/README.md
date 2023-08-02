@@ -134,6 +134,6 @@ Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obvi
 
 ## ¿Qué vemos ?
 
-- 1 - Tipado de datos
+- 1 - Tipado de datos primitivos y no promitivos
 
 --- 
