@@ -48,27 +48,29 @@
 - Is this OK? (yes)
 
 
-3. Agregamos dependencias con npm: `npm i --save-dev @types/node nodemon ts-node typescript`, porque son heramientas de **entorno de desarrollo**.
+3. Agregamos dependencias con npm: `npm i --save-dev @types/node nodemon ts-node typescript rimraf`, porque son heramientas de **entorno de desarrollo**.
 
 - [@types/node](https://www.npmjs.com/package/@types/node)
 
-- [nodemon](https://www.npmjs.com/package/nodemon)
+- [nodemon](https://www.npmjs.com/package/nodemon), para ir actualizando los cambios sin necesidad de estar finalizar la ejecución de la terminal y volver a correrla.
 
 - [ts-node](https://www.npmjs.com/package/ts-node)
 
 - [TypeScript](https://www.npmjs.com/package/typescript)
 
+- rimraf, para generar build más potentes, sin necesidad de usar Webpack.
+
 Y ahora en el packege.json veo:
 
-```
+```JSON
 "devDependencies": {
   "@types/node": "^20.4.5",
   "nodemon": "^3.0.1",
+  "rimraf": "^5.0.1",
   "ts-node": "^10.9.1",
   "typescript": "^5.1.6"
 }
 ```
-
 
 4. **tsconfig** para tener el archivo de configuración de TypeScript, para indicar como se va a transpilar de TypeScript a JavaScript. Lo inicializamos:
 
@@ -95,14 +97,14 @@ y desde consola lo ejecuto: `npm run tsNode`, asi se va a transpilar y ejecutar 
 7. Aprovechamos **nodemon** y desde la raiz del proyecto (ts-demo) creamos un archivo **nodemon.json**
 
 
-`
+```JSON
 {
   "watch": ["src"],
   "extensions": ".ts, .js",
   "ignore": [],
   "exec": "ts-node ./src/index.ts"
 }
-`
+```
 
 
 Y agrego un script en el package.json para poder ejecutarlo: `"start": "nodemon"`.
@@ -117,7 +119,16 @@ Con `ctrl+c` paro la ejecución.
 8. Creamos otro script para el build, en el package.json, en la parte de script: `"transpilation": "tsc"`. Y lo corremos `npm run transpilation`
 
 
-9. Con ESLint le ponemos normas/ reglas para que todos desarrollemos igual, sea más mantenible.
+9. Agregamos un nuevo script para usar **rimraf**: 
+
+``"build:prod":"rimraf ./build && tsc"``, hago una **build** (`rimraf`) desde la carpeta **build** ( `./build`) y despues lo **traspilo** (``&& tsc``)
+
+Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obviar los comandos: `tsNode`, `start` y `transpilation`
+
+-> Ahora con ` npm run start:prod` agarramos el archivos TS, hacemos el build, transpilamos y corremos el archivo JavaScript creado.
+
+10. Con ESLint le ponemos normas/ reglas para que todos desarrollemos igual, sea más mantenible.
 
 
 ---
+
