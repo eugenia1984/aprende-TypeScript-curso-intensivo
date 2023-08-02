@@ -134,6 +134,6 @@ Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obvi
 
 ## ¿Qué vemos ?
 
-- 1 - **Tipado de datos** primitivos y no promitivos. **BuiltIn Types**: number, string, boolean, void, null, undefined.
+- 1 - **Tipado de datos** primitivos y no promitivos(array, enum, interface, type). **BuiltIn Types**: number, string, boolean, void, null, undefined.
 
 --- 
