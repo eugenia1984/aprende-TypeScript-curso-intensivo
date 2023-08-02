@@ -5,14 +5,15 @@
  * funciones, componentes, etc
  */
 
+/****************************************************************/
+/********************  Tipado  de  datos  ***********************/
 /***************************************************************/
-/********************  Tipado  de  datos  **********************/
-/**************************************************************/
 
-/**************  Declaración de variables *******************/
+/****************  Declaración de variables ********************/
 // tipado inferido, infiere que es de tipo string
 let firstName = 'María Eugenia'
-// no voy a poder asignarle otro tipo de valor, como por ejemplo: firstName = 10
+// no voy a poder asignarle otro tipo de valor, 
+// como por ejemplo: firstName = 10
 // Declaro el tipo de dato, no lo necesita inferir
 let eMail: string = 'costamariaeugenia1@gmail.com'
 
@@ -27,9 +28,10 @@ const PI: number = 3.1416
 
 // Ejemplo de boolean
 let error:boolean = false
-console.log(`¿Hay error?: ${error}`) // aca con .toString no es boolean sino es string
+// aca con .toString no es boolean sino es string
+console.log(`¿Hay error?: ${error}`) 
 // Mejor declarar el tipo si solo declaro la variable,
-// sino despues cuando asigno un valor podria ser cualquier cosa menso boolean
+// sino despues cuando asigno un valor podria ser cualquier cosa menos boolean
 let esPrimo: boolean 
 
 
@@ -40,10 +42,11 @@ b = true
 c = 2.34
 
 
-/*********** Siempre evitar usar ANY **************/
-// Se pierde el tipado, se puede asignar distintos tipos de datos a una misma variable
+/********************  Siempre evitar usar ANY  *****************/
+// Se pierde el tipado, se puede asignar distintos tipos
+// de datos a una misma variable
 
-/************ Tipo dedatos complejos, no primitivos **********/
+/************  Tipo de datos complejos, no primitivos  **********/
 // se pasan por referencia en vez de por valor
 // Ejemplo de array
 let taskList: string[] = ['Task 1', 'Task 2', 'Task 3']
