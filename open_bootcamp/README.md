@@ -132,3 +132,8 @@ Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obvi
 
 ---
 
+## ¿Qué vemos ?
+
+- 1 - Tipado de datos
+
+--- 
