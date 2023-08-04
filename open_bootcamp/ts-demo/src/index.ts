@@ -219,6 +219,10 @@ do {
   numeroMenorACinco++
 } while (numeroMenorACinco < 5)
 
+/************************************************
+ ****** Destructuraciòn y Spread Operator ******* 
+ ***********************************************/
+
 // Asignación múltiple de variables -> desestructuración 
 /*
 Me ahorro de hacer:
@@ -228,6 +232,19 @@ let urgencia = tarea1.urgencia
 */
 let { nombre, estado, urgencia } = tarea1
 
-// Spread operator
+// Spread operator en array
 let listaCompraLunes: string[] = ['leche', 'papas']
 let listaCompraMartes: string[] = [...listaCompraLunes, 'pan', 'huevos']
+
+// Spread operator en objetos
+let estadoApp = {
+  usuario: 'admin',
+  session: 3,
+  jwt: 'Bearer12345678'
+}
+
+// cambiar un valor por propagación
+let nuevoEstado = {
+  ...estadoApp,
+  session: 4
+}

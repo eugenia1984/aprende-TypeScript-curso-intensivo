@@ -134,7 +134,7 @@ Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obvi
 
 ## ¿Qué vemos ?
 
-- 1 - **Tipado de datos** primitivos y no promitivos(array, enum, interface, type). **BuiltIn Types**: number, string, boolean, void, null, undefined. Asignación múltiple de variables con **desestructuración**. **spread operator** en array.
+- 1 - **Tipado de datos** primitivos y no promitivos(array, enum, interface, type). **BuiltIn Types**: number, string, boolean, void, null, undefined. Asignación múltiple de variables con **desestructuración**. **spread operator** en array y objeto.
 
 - 2 - **condicionales** (operador ternario, if, if-else, if-else if-else, swich) y **bucles** (for, forEach, for in, while, do while)
 
