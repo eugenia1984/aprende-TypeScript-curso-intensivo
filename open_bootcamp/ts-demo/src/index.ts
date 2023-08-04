@@ -207,14 +207,27 @@ for (const day in days) {
 // While
 // Siempre debe tener algun punto que deja de cumplirse la condicio, sino es un bucle infinito
 let numeroMenorADiez = 0
-while(numeroMenorADiez < 10) { // mientras esta condicion sea TRUE se ejecuta
-  console.log(`El número: ${numeroMenorADiez} es menor a 10`)
+while (numeroMenorADiez < 10) { // mientras esta condicion sea TRUE se ejecuta
+  console.log(`El número: ${ numeroMenorADiez } es menor a 10`)
   numeroMenorADiez++
 }
 
 // do while - se ejecuta la menos una vez
 let numeroMenorACinco = 0
 do {
-  console.log(`Númeor menor a cindo: ${numeroMenorACinco}`)
+  console.log(`Númeor menor a cindo: ${ numeroMenorACinco }`)
   numeroMenorACinco++
 } while (numeroMenorACinco < 5)
+
+// Asignación múltiple de variables -> desestructuración 
+/*
+Me ahorro de hacer:
+let nombre = tarea1.nombre
+let estado = tarea1.estado
+let urgencia = tarea1.urgencia
+*/
+let { nombre, estado, urgencia } = tarea1
+
+// Spread operator
+let listaCompraLunes: string[] = ['leche', 'papas']
+let listaCompraMartes: string[] = [...listaCompraLunes, 'pan', 'huevos']
