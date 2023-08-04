@@ -136,4 +136,8 @@ Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obvi
 
 - 1 - **Tipado de datos** primitivos y no promitivos(array, enum, interface, type). **BuiltIn Types**: number, string, boolean, void, null, undefined.
 
+- 2 - **condicionales**: if, if-else, if-else if-else, swich
+
+- 3 - manejo de errores: **try-catch**
+
 --- 

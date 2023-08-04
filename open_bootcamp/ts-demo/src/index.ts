@@ -88,15 +88,61 @@ let tarea1: Tarea = {
   urgencia: 10
 }
 console.log(`Tarea: ${ tarea1.nombre }`)
+
+
 // Type de TypeScript
 // Los tipos son para definir un tipo mas complejo
 type Producto = {
   precio: number,
   nombre: string
+  anio: number
 }
 
 let coche: Producto = {
   nombre: 'Audi',
-  precio: 45000
+  precio: 45000,
+  anio: 2012
 }
-console.log(`Producto: ${ coche.nombre }`)
+
+/*********  Condicionales ********/
+// Operador ternario
+console.log(coche.anio < 2000 ? `Coche: ${ coche.nombre } es viejo` : `Coche: ${ coche.nombre } es nuevo`)
+
+// if-else 
+if (error) {
+  console.error('Hay un error')
+} else {
+  console.info('No hay error')
+}
+
+// if - else if - else
+if (coche.anio < 2010) {
+  console.log(`Coche: ${ coche.nombre } es viejo`)
+} else if (coche.anio === 2010) {
+  console.log(`Coche: ${ coche.nombre } es del 2010`)
+} else {
+  console.log(`Coche: ${ coche.nombre } es nuevo`)
+}
+
+// Switch
+switch(tarea1.estado) {
+  case Estado.Completado:
+    console.log('La tarea está completada')
+    break
+  case Estado.Incompleto:
+    console.log('La tarea no está completada')
+    break
+  case Estado.Pendiente:
+    console.log('La tarea está pendiente')    
+    break
+  default:
+    break
+}
+
+// try- catch para capturar errores
+try {
+  // Hago algo que puede darme error
+} catch( err) {
+  // Aca capturo el error
+  console.log(`Error: ${error}`)
+}
