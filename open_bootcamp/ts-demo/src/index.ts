@@ -104,9 +104,15 @@ let coche: Producto = {
   anio: 2012
 }
 
-/*********  Condicionales ********/
+/************************************* 
+ ********   Condicionales   **********
+ ************************************/
 // Operador ternario
-console.log(coche.anio < 2000 ? `Coche: ${ coche.nombre } es viejo` : `Coche: ${ coche.nombre } es nuevo`)
+console.log(coche.anio < 2000 ?
+  `Coche: ${ coche.nombre } es viejo`
+  :
+  `Coche: ${ coche.nombre } es nuevo`
+)
 
 // if-else 
 if (error) {
@@ -125,7 +131,7 @@ if (coche.anio < 2010) {
 }
 
 // Switch
-switch(tarea1.estado) {
+switch (tarea1.estado) {
   case Estado.Completado:
     console.log('La tarea está completada')
     break
@@ -133,7 +139,7 @@ switch(tarea1.estado) {
     console.log('La tarea no está completada')
     break
   case Estado.Pendiente:
-    console.log('La tarea está pendiente')    
+    console.log('La tarea está pendiente')
     break
   default:
     break
@@ -142,7 +148,71 @@ switch(tarea1.estado) {
 // try- catch para capturar errores
 try {
   // Hago algo que puede darme error
-} catch( err) {
+} catch (err) {
   // Aca capturo el error
-  console.log(`Error: ${error}`)
+  console.log(`Error: ${ error }`)
 }
+
+/**************************************** 
+ *************  Bucles   ****************
+ ***************************************/
+let newTaskList: Tarea[] = [
+  {
+    nombre: ' Task 1',
+    estado: Estado.Completado,
+    urgencia: 2
+  },
+  {
+    nombre: ' Task 2',
+    estado: Estado.Pendiente,
+    urgencia: 0
+  },
+  {
+    nombre: ' Task 3',
+    estado: Estado.Completado,
+    urgencia: 15
+  }
+]
+
+// forEach con un CallBack de parametro
+newTaskList.forEach(
+  (tarea: Tarea, indice: number) => {
+    console.log(`${ indice } - ${ tarea.nombre }`)
+  }
+)
+
+// for (clasico)
+for (let index = 0; index < newTaskList.length; index++) {
+  const tarea = newTaskList[index]
+  console.log(`${ index } - ${ tarea.nombre }`)
+}
+
+// for in
+const days = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday'
+]
+
+for (const day in days) {
+  console.log(day)
+}
+
+// While
+// Siempre debe tener algun punto que deja de cumplirse la condicio, sino es un bucle infinito
+let numeroMenorADiez = 0
+while(numeroMenorADiez < 10) { // mientras esta condicion sea TRUE se ejecuta
+  console.log(`El número: ${numeroMenorADiez} es menor a 10`)
+  numeroMenorADiez++
+}
+
+// do while - se ejecuta la menos una vez
+let numeroMenorACinco = 0
+do {
+  console.log(`Númeor menor a cindo: ${numeroMenorACinco}`)
+  numeroMenorACinco++
+} while (numeroMenorACinco < 5)
