@@ -248,3 +248,47 @@ let nuevoEstado = {
   ...estadoApp,
   session: 4
 }
+
+/****************************************
+*************  Funciones  **************
+***************************************/
+// los nombres en camelCase
+
+/**
+ * Function that displays a console greeting
+ */
+function sayHi():void {
+  let nombre = 'Euge'
+  console.log(`Hello world!: ${nombre}`)
+}
+
+sayHi() // Invoco a la funcion
+
+/**
+ * Function that displays a console greeting
+ * @param nombre a string, the name of the person to greet
+ */
+function sayHiPerson(nombre: string) {
+
+}
+
+const persona = 'Euge'
+sayHiPerson(persona) // pasando por valor
+
+/**
+ * Function that displays by console a farewell greeting
+ * @param nombre a string, the name of the person to greet, by default: 'Pepe'
+ */
+function sayByePersona(nombre: string = 'Pepe') {
+  console.log(`Bye! ${nombre} `)
+}
+
+// toma el valor por default Pepe, el parametro nombre queda nombre?:string, es opcional
+sayByePersona() 
+sayByePersona('Ana')
+
+// Sobrecarga de funciones
+
+// Funciones asincronas
+
+// Funciones generadoras

@@ -3,6 +3,7 @@
 [https://github.com/gorkavillara/curso-typescript-05-junio/tree/tema-01-introduccion](https://github.com/gorkavillara/curso-typescript-05-junio/tree/tema-01-introduccion) es el repositorio en GitHub donde subieron el código por si tenemos dudas.
 
 ---
+
 ## <img width="40" height="40" src="https://img.icons8.com/stickers/40/maintenance.png" alt="maintenance"/> Herramientas
 
 - [<img width="40" height="40" src="https://img.icons8.com/color/40/nodejs.png" alt="nodejs"/> **Node**](https://nodejs.org/es), con `node --version` vemos el númeor de versión y reconfirmamos que lo tenemos instalado
@@ -13,15 +14,11 @@
 
 - <img width="40" height="40" src="https://img.icons8.com/color/40/visual-studio-code-2019.png" alt="visual-studio-code-2019"/> **Visual Studio Code**, extensiones recomendadas: **material icon** para los iconos en los archivos, **JavaScript and TypeScript Nightly**, **TypeScript Hero**, **ESLint**, **npm** y **npm intellisense**, **Path Intellisense**, **Rainbow Brackets**, **TODO Highligh**, **TODO Tree**
 
-
 ---
-
 
 ## <img width="40" height="40" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/40/external-command-line-computer-science-flaticons-lineal-color-flat-icons.png" alt="external-command-line-computer-science-flaticons-lineal-color-flat-icons"/> ¿Qué hacemos?
 
-
 1. `mkdir ts-demo` para crear la carpeta
-
 
 2. `npm init` para iniciar un proyecto con el archivo package.json asi se instalan las dependencias. Si utilizamos `npm init -y` le decimos yes a todo por defecto, pero lo vamos a crear manual, con el **menu de preguntas**:
 
@@ -37,7 +34,7 @@
 
 - git repository: https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo
 
-- keywords: ts, typescript, frontend, javascript -> es opcional, son las palabras claves con las que buscaran el paquete en npm 
+- keywords: ts, typescript, frontend, javascript -> es opcional, son las palabras claves con las que buscaran el paquete en npm
 
 - author: Maria Eugenia Costa
 
@@ -46,7 +43,6 @@
 -> Se ve el resumen de como se vera el **package.json**
 
 - Is this OK? (yes)
-
 
 3. Agregamos dependencias con npm: `npm i --save-dev @types/node nodemon ts-node typescript rimraf`, porque son heramientas de **entorno de desarrollo**.
 
@@ -86,16 +82,12 @@ Y ahora en el packege.json veo:
 
 -> **--noImplicitAny true**
 
-
 5. Creamos la carpeta **src** donde tendremos el codigo fuente del proyecto. Y dentro el **index.ts**
 
-
 6. Agrego un script para ejecutar ts-node: `"tsNode": "cd src && ts-node index.ts"`
-y desde consola lo ejecuto: `npm run tsNode`, asi se va a transpilar y ejecutar para ver por consola.
-
+   y desde consola lo ejecuto: `npm run tsNode`, asi se va a transpilar y ejecutar para ver por consola.
 
 7. Aprovechamos **nodemon** y desde la raiz del proyecto (ts-demo) creamos un archivo **nodemon.json**
-
 
 ```JSON
 {
@@ -106,22 +98,17 @@ y desde consola lo ejecuto: `npm run tsNode`, asi se va a transpilar y ejecutar 
 }
 ```
 
-
 Y agrego un script en el package.json para poder ejecutarlo: `"start": "nodemon"`.
-
 
 Ahora con: `npm run start` lo corremos.
 
-
 Con `ctrl+c` paro la ejecución.
-
 
 8. Creamos otro script para el build, en el package.json, en la parte de script: `"transpilation": "tsc"`. Y lo corremos `npm run transpilation`
 
+9. Agregamos un nuevo script para usar **rimraf**:
 
-9. Agregamos un nuevo script para usar **rimraf**: 
-
-``"build:prod":"rimraf ./build && tsc"``, hago una **build** (`rimraf`) desde la carpeta **build** ( `./build`) y despues lo **traspilo** (``&& tsc``)
+`"build:prod":"rimraf ./build && tsc"`, hago una **build** (`rimraf`) desde la carpeta **build** ( `./build`) y despues lo **traspilo** (`&& tsc`)
 
 Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obviar los comandos: `tsNode`, `start` y `transpilation`
 
@@ -129,10 +116,9 @@ Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obvi
 
 10. Con ESLint le ponemos normas/ reglas para que todos desarrollemos igual, sea más mantenible.
 
-
 ---
 
-## ¿Qué vemos ?
+## <img width="30" height="30" src="https://img.icons8.com/isometric/30/experimental-book-isometric.png" alt="book"/> ¿Qué vemos ?
 
 - 1 - **Tipado de datos** primitivos y no promitivos(array, enum, interface, type). **BuiltIn Types**: number, string, boolean, void, null, undefined. Asignación múltiple de variables con **desestructuración**. **spread operator** en array y objeto.
 
@@ -140,4 +126,6 @@ Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obvi
 
 - 3 - manejo de errores: **try-catch**
 
---- 
+- 4 - **funciones**: sobrecarga de funciones, funciones asíncronas, funciones generadoras
+
+---
