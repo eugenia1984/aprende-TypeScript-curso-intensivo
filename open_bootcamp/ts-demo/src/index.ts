@@ -322,6 +322,12 @@ function exampleDifferentTypes(a: string | number) {
 }
 
 // Return
+/**
+ * exampleReturn 
+ * @param nombre: first name 
+ * @param apellidos: last name 
+ * @returns: the full name (first name and last name) 
+ */
 function exampleReturn(nombre: string, apellidos: string): string {
   return `${nombre} ${apellidos}`
 }
@@ -329,12 +335,147 @@ function exampleReturn(nombre: string, apellidos: string): string {
 console.log(exampleReturn('Marìa', 'Costa'))
 
 // Spread operator con multiparametros
-function exampleMultiparam(...nombres: string[]) {
+/**
+ * exampleMultiparam it's an axample function of multiparams,
+ * not know how much params we will have 
+ * @param nombres an array of names (string)
+ */
+function exampleMultiparam(...nombres: string[]): void {
   nombres.forEach(nombre => console.log(nombre))
 }
 
-// Sobrecarga de funciones
+exampleMultiparam('Ana', 'Marcos', 'Mia', 'Luna')
+const listaNombres = ['Carlos', 'Mateo']
+exampleMultiparam(...listaNombres)
 
-// Funciones asincronas
+type Empleado = {
+  nombre: string
+  apellido: string
+  edad: number
+}
+let empleadoMartin:Empleado = {
+  nombre: 'Martin',
+  apellido: 'San Jose',
+  edad: 30
+}
 
-// Funciones generadoras
+/************************  Arrow function  ***************************/ 
+const showEmployee = (empleado: Empleado): string => `${empleado.nombre} ${empleado.apellido} tiene ${empleado.edad} años`
+
+showEmployee(empleadoMartin)
+
+const employeeData = ( empleado:Empleado): string => {
+  if(empleado.edad > 70) {
+    return `${empleado.nombre} está en edad de jubilarse`
+  } else {
+    return `${empleado.nombre} está en edad laboral` 
+  }
+}
+
+employeeData(empleadoMartin)
+
+const getSalary = ( empleado: Empleado, cobrar: () => string) => {
+  if(empleado.edad > 70) {
+    return
+  } else {
+    cobrar() // callback a ejecutar
+  }
+}
+
+const cobrarEmpleado = (empleado: Empleado) => {
+  console.log(`${empleado.nombre} cobra su salario`)
+}
+
+getSalary(empleadoMartin, () => 'Cobrar salario')
+
+/********************  Funciones asincronas ******************************/ 
+
+// Promise<string> -> Represents the completion of an asynchronous operation
+
+async function asyncExample():Promise<string> {
+  // Aca podria hacer una peticion HTTP
+ await console.log('Tarea a completar antes de seguir con la secuencia de instrucciones')
+ console.log('Tarea completada')
+ return 'Completado'
+}
+
+// .then() se va a hacer una vez que completa la promesa
+// .catch() para capturar errores
+// finally() se ejecuta siempre
+asyncExample()
+  .then(response => console.log('Respuesta: ',response))
+  .catch(error => console.error('Error: ', error))
+  .finally(() => console.info('Todo terminado'))
+
+/*********************  Funcion generadora ****************************/ 
+/*
+- What is a generator function?
+A generator function is a special function that can be exited AND re-entered.
+
+Those functions use the function* notation.
+
+Calling a generator returns a generator object (instead of executing its body).
+
+You need to call the next function to execute the function's body.
+
+- The next function
+
+When called, the next function executes the function's body UNTIL the first yield expression or return statement. If the next function reaches a yield expression, the generator is put in a paused state. To resume its execution, we need to call the next function again.
+
+The next function returns:
+
+A value property that contains the yielded value.
+
+A done property that indicates if the generator has yielded its last value.
+
+- What is the yield keyword?
+
+The yield keyword pauses the execution of a generator. It also can return a value. It causes the next function to return an IteratorResult object.
+
+You can think of it as the return keyword for generators.
+
+You can only use it in a generator function.
+*/
+// yield -> para emitir valores
+function* generatorExample() {
+  let index = 0
+  while(index < 5) {
+    // emitimos un valor incrementado
+    yield index++
+  }
+}
+
+// Guardamos la función generadora en una variable
+let generadora = generatorExample()
+
+// Accedemos a los valores emitidos
+console.log(generadora.next().value) // 0
+console.log(generadora.next().value) // 1
+console.log(generadora.next().value) // 2
+
+// Worker y Watcher
+// Se usa en React y Angular para gestionar el estado de la app
+// una funcion esta escuchando un evento
+// Y otras funciones trabajan de forma asincrona
+// El 'watcher' llama al 'worker'
+
+function* watcher(valor: number) {
+  yield valor // emitimos el valor inicial
+  yield* worker(valor) // llamamos a las emisiones del worker para que emita otros valores
+  yield valor + 4 // amitimos le valor final
+}
+function* worker(valor: number) {
+  yield valor + 1
+  yield valor + 2
+  yield valor + 3
+}
+
+let generatorSaga = watcher(0) 
+console.log(generatorSaga.next().value) // 0 (lo ha hecho el watcher)
+console.log(generatorSaga.next().value) // 1 (lo ha hecho el worker)
+console.log(generatorSaga.next().value) // 2 (lo ha hecho el worker)
+console.log(generatorSaga.next().value) // 3 (lo ha hecho el worker)
+console.log(generatorSaga.next().value) // 4 (lo ha hecho el watcher)
+
+
+
