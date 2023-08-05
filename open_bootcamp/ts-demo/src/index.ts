@@ -249,17 +249,17 @@ let nuevoEstado = {
   session: 4
 }
 
-/****************************************
-*************  Funciones  **************
-***************************************/
+/*********************************************
+****************  Funciones  *****************
+*********************************************/
 // los nombres en camelCase
 
 /**
  * Function that displays a console greeting
  */
-function sayHi():void {
+function sayHi(): void {
   let nombre = 'Euge'
-  console.log(`Hello world!: ${nombre}`)
+  console.log(`Hello world!: ${ nombre }`)
 }
 
 sayHi() // Invoco a la funcion
@@ -280,12 +280,58 @@ sayHiPerson(persona) // pasando por valor
  * @param nombre a string, the name of the person to greet, by default: 'Pepe'
  */
 function sayByePersona(nombre: string = 'Pepe') {
-  console.log(`Bye! ${nombre} `)
+  console.log(`Bye! ${ nombre } `)
 }
 
 // toma el valor por default Pepe, el parametro nombre queda nombre?:string, es opcional
-sayByePersona() 
+sayByePersona()
 sayByePersona('Ana')
+
+// Parametros opcionales
+
+/**
+ *  Function that displays by console a farewell greeting
+ * @param nombre (Optional) a string, the name of the person to greet
+ */
+function sayByeOptional(nombre?: string) { // nombre?: string => nombre: string | undefined
+  (nombre) ? console.log(`Bye, ${ nombre }!`) : console.log('Bye!')
+}
+
+sayByeOptional()
+sayByeOptional('Juanjo')
+
+// Varios parametros
+function variosParams(nombre: string, apellido?: string, edad: number = 18) {
+  (apellido)? console.log(`${nombre} ${apellido}, tiene ${edad} años.`) : console.log(`${nombre}, tiene ${edad} años.`)
+}
+
+variosParams('Martin') // Martin, tiene 18 años
+variosParams('Juan', 'Perez') // Juan Perez, tiene 18 años
+variosParams('Ana', undefined, 30) // Ana, tiene 30 años
+variosParams('Analía', 'Bruni', 30) // Analía Bruni, tiene 30 años
+
+// Varios tipos
+function exampleDifferentTypes(a: string | number) {
+  if (typeof(a) === 'string') {
+    console.log('Es un string')
+  } else  if (typeof(a) === 'number') {
+    console.log('Es un number')
+  } else {
+    console.log('No es string ni number')
+  }
+}
+
+// Return
+function exampleReturn(nombre: string, apellidos: string): string {
+  return `${nombre} ${apellidos}`
+}
+
+console.log(exampleReturn('Marìa', 'Costa'))
+
+// Spread operator con multiparametros
+function exampleMultiparam(...nombres: string[]) {
+  nombres.forEach(nombre => console.log(nombre))
+}
 
 // Sobrecarga de funciones
 

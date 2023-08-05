@@ -126,6 +126,6 @@ Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obvi
 
 - 3 - manejo de errores: **try-catch**
 
-- 4 - **funciones**: sobrecarga de funciones, funciones asíncronas, funciones generadoras
+- 4 - **funciones**: parametros opcionales, varios parametros, spread operator con multiparametros, return, sobrecarga de funciones, funciones asíncronas, funciones generadoras
 
 ---
