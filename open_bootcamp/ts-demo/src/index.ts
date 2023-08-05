@@ -389,7 +389,6 @@ const cobrarEmpleado = (empleado: Empleado) => {
 getSalary(empleadoMartin, () => 'Cobrar salario')
 
 /********************  Funciones asincronas ******************************/ 
-
 // Promise<string> -> Represents the completion of an asynchronous operation
 
 async function asyncExample():Promise<string> {
@@ -411,31 +410,23 @@ asyncExample()
 /*
 - What is a generator function?
 A generator function is a special function that can be exited AND re-entered.
-
 Those functions use the function* notation.
-
 Calling a generator returns a generator object (instead of executing its body).
-
 You need to call the next function to execute the function's body.
 
 - The next function
-
 When called, the next function executes the function's body UNTIL the first yield expression or return statement. If the next function reaches a yield expression, the generator is put in a paused state. To resume its execution, we need to call the next function again.
 
 The next function returns:
-
 A value property that contains the yielded value.
-
 A done property that indicates if the generator has yielded its last value.
 
 - What is the yield keyword?
-
 The yield keyword pauses the execution of a generator. It also can return a value. It causes the next function to return an IteratorResult object.
-
 You can think of it as the return keyword for generators.
-
 You can only use it in a generator function.
 */
+
 // yield -> para emitir valores
 function* generatorExample() {
   let index = 0
@@ -476,6 +467,44 @@ console.log(generatorSaga.next().value) // 1 (lo ha hecho el worker)
 console.log(generatorSaga.next().value) // 2 (lo ha hecho el worker)
 console.log(generatorSaga.next().value) // 3 (lo ha hecho el worker)
 console.log(generatorSaga.next().value) // 4 (lo ha hecho el watcher)
+
+// Sobrecarga de funciones
+// En los métodos de las clases
+// Una misma funcion, dependiendo del parametro que recibe,
+// hace una cosa u otra. En cambio si para un mismo parametro 
+// puedo tener más de un tipo, entonces ahi utilizamos ||
+function mostrarError(error: string):void {
+  console.log(`Ha habido un error: ${error}`)
+}
+
+// Ejemplo de sobrecarga:
+// function mostrarError(error: string, codigo:number): void {
+//   console.log(`Ha habido un error: ${error}, el código es: ${codigo}`)
+// }
+
+/******************************************
+ *******  PERSISTENCIA DE DATOS  ********** 
+ *****************************************/
+
+/************ LocalStorage **************/
+// Almacena los datos en el navegador, persiste, 
+// no se elimina automaticamente
+const guardarEnLocalStorage = (): void => {
+  // 'nombre' es la key, y 'Euge' es el value que guardo
+  localStorage.set('nombre', 'Euge')
+}
+
+const leerEnLocalStorage = ():void => {
+  // si estaba guardado ok voy a tener 'Euge', sino undefined
+  let name = localStorage.get('nombre')
+}
+
+/*********** SessionStorage *************/
+// La sesion del navegador, los datos se persisten en la 
+// sesion del navegador, si cambias de sesion se pierde
+
+/***************  Cookies **************/
+// Tienen una fecha de cauducidad y tienen un ámbito de URL
 
 
 

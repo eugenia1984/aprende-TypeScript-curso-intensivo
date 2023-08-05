@@ -85,7 +85,7 @@ Y ahora en el packege.json veo:
 5. Creamos la carpeta **src** donde tendremos el codigo fuente del proyecto. Y dentro el **index.ts**
 
 6. Agrego un script para ejecutar ts-node: `"tsNode": "cd src && ts-node index.ts"`
-   y desde consola lo ejecuto: `npm run tsNode`, asi se va a transpilar y ejecutar para ver por consola.
+ y desde consola lo ejecuto: `npm run tsNode`, asi se va a transpilar y ejecutar para ver por consola.
 
 7. Aprovechamos **nodemon** y desde la raiz del proyecto (ts-demo) creamos un archivo **nodemon.json**
 
@@ -110,7 +110,7 @@ Con `ctrl+c` paro la ejecución.
 
 `"build:prod":"rimraf ./build && tsc"`, hago una **build** (`rimraf`) desde la carpeta **build** ( `./build`) y despues lo **traspilo** (`&& tsc`)
 
-Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obviar los comandos: `tsNode`, `start` y `transpilation`
+Y también: `"start:prod":"npm run build:prod && node build/index.js"`, para obviar los comandos: `tsNode`, `start` y `transpilation`
 
 -> Ahora con ` npm run start:prod` agarramos el archivos TS, hacemos el build, transpilamos y corremos el archivo JavaScript creado.
 
@@ -127,5 +127,7 @@ Y tambén: `"start:prod":"npm run build:prod && node build/index.js"`, para obvi
 - 3 - manejo de errores: **try-catch**
 
 - 4 - **funciones**: parametros opcionales, varios parametros, spread operator con multiparametros, return, arrow function, funcion callback, sobrecarga de funciones, funciones asíncronas (async-await, .then() - .catch() - .finally()), funciones generadoras(yield). **type**
+
+- 5 - **persistencia de datos** en el navegador (LocalStorage, SessionStorage, Cookies) se y ejecución de **eventos**
 
 ---
