@@ -21,9 +21,9 @@ Dentro de la carpeta  [<img width="40" height="40" src="https://img.icons8.com/e
 
 -> **Extra**: 
 
-- [<img width="30" height="30" src="https://img.icons8.com/dusk/30/monitor--v1.png" alt="monitor--v1"/> El curso de TypeScript de OpenBootcamp](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/open_bootcamp)
+- [<img width="20" height="20" src="https://img.icons8.com/dusk/20/monitor--v1.png" alt="monitor--v1"/> El curso de TypeScript de OpenBootcamp](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/open_bootcamp)
 
-- [<img width="30" height="30" src="https://img.icons8.com/dusk/30/monitor--v1.png" alt="monitor--v1"/> Todo sobre Patrones de Diseño con JavaScript y TypeScript](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/patrones_disenio)
+- [<img width="20" height="20" src="https://img.icons8.com/dusk/20/monitor--v1.png" alt="monitor--v1"/> Todo sobre Patrones de Diseño con JavaScript y TypeScript](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/patrones_disenio)
 , el curso de UDemy de Alvaro Chirou
 
 ---
