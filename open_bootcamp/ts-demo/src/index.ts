@@ -7,6 +7,10 @@ import {
 import { Curso } from './models/Curso'
 import { Estudiante } from './models/Estudiante'
 import { LISTA_CURSOS } from './mock/cursos.mock'
+import { Jefe, Trabajador } from './models/Persona'
+import { Producto } from './models/types/Producto'
+import { ITarea, Nivel } from './models/interfaces/Itarea'
+import { Programar } from './models/Programar'
 
 /*****************************************************************
 ********************  Tipado  de  datos  *************************
@@ -91,15 +95,6 @@ let tarea1: Tarea = {
   urgencia: 10
 }
 console.log(`Tarea: ${ tarea1.nombre }`)
-
-
-// Type de TypeScript
-// Los tipos son para definir un tipo mas complejo
-type Producto = {
-  precio: number,
-  nombre: string
-  anio: number
-}
 
 let coche: Producto = {
   nombre: 'Audi',
@@ -620,3 +615,94 @@ Se usan en JS, porque en TS si ya tenemos todo bien tipado no lo necesitarìamos
 */
 
 let texto = new String('Hola') // string constructor
+let fechaNacimiento = new Date(1991, 10, 10) // Date constructor
+if (fechaNacimiento instanceof Date) {
+  console.log('Es una instancia de Date')
+}
+
+if (Martin instanceof Estudiante) {
+  console.log('Martin es un Estudiante')
+}
+
+/***********  Herencia y polimorfismo  *********/
+let trabajador1 = new Trabajador('Martin', 'San José', 38, 2000)
+let trabajador2 = new Trabajador('Pepe', 'Garcia', 21, 1500)
+let trabajador3 = new Trabajador('Juan', 'Gonzales', 40, 2000)
+// Herencia de Persona
+// trabajador1.saludar()
+
+let jefe = new Jefe('Pablo', 'Garcia', 40)
+jefe.trabajadores.push(trabajador1, trabajador2, trabajador3)
+jefe.trabajadores.forEach((trabajador: Trabajador) =>
+  console.log(`Trabajador: ${ trabajador.nombre }`)
+)
+jefe.saludar()
+
+/***************  INTERFACES **************/
+let programar: ITarea = {
+  titulo: 'Programar en TypeScript',
+  descripcion: 'Practicar para aprender a desarrollar con TypeScript',
+  completada: false,
+  urgencia: Nivel.Urgente,
+  resumen: function (): string {
+    return `${this.titulo} - ${this.completada} - Nivel: ${this.urgencia}`
+  }
+}
+
+console.log(programar.resumen())
+
+// Tarea de programación que implementa ITarea
+let programarTS = new Programar('TS', 'Tarea de programación en TS', false, Nivel.Bloqueante)
+console.log(programarTS.resumen())
+
+/* 
+¿type? ¿interface? ¿class?
+- type: es un tipo propio  y personalizado, no llega a la complejidad de una clase,
+no requiere de crear isntancias, constructores, metodos
+- interface: para definir que propiedades y metodos deben implementar, si o si
+de forma obligatoria
+- class: para implementar las interfacer o crear objetos complejos
+*/
+
+/******************  Decoradores **********************/
+/*
+Funciones declaradas a traves de un simbolo: @, para dar más metadatos a:
+- clases
+- parametros
+- métodos
+- propiedades
+-> Para usarlos en tsconfig tener habilitado: "experimentalDecorators": true, 
+*/
+
+function Override(label: string) {
+  return function (target: any, key: string) {
+    Object.defineProperty(target, key, {
+      configurable: false,
+      get: () => label
+    })
+  }
+}
+
+class PruebaDecorador {
+  @Override('Prueba') // llamar a la funcion Override
+  nombre:string = 'Martin'
+}
+
+let prueba = new PruebaDecorador()
+console.log(prueba.nombre) // 'Prueba'
+
+// otra funcion para usarla como decorador
+function SoloLectura(target: any, key: string) {
+  Object.defineProperty(target, key, {
+    writable: false
+  })
+}
+
+class pruebaSoloLectura {
+  @SoloLectura
+  nombre: string = ''
+}
+
+let pruebaLectura = new pruebaSoloLectura()
+pruebaLectura.nombre = 'Martin'
+console.log(pruebaLectura.nombre) // undefined -> no se le puede dar un valor
