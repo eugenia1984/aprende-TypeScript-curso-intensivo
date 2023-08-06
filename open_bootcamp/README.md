@@ -130,8 +130,8 @@ Y también: `"start:prod":"npm run build:prod && node build/index.js"`, para obv
 
 - 5 - **persistencia de datos** en el navegador (LocalStorage-nativo de JavaSCript-, SessionStorage-nativo de JavaScript-, Cookies se trabaja manual o con librerias). Paquete npm **cookie-utils**: `npm install cookies-utils` (existe la libreria **cookies** que es para peticiones HTTP, más pensado para el Back, para un server de Express). Ejecución de **eventos**
 
-- 6 - **POO !**: **Clases** (properties, methods, constructor, getter, setter, accesos: public, private). **import**/**export** para clases, funciones, constantes, modulos, etc.
+- 6 - **POO 1**: **Clases** (properties, methods, constructor, getter, setter, accesos: public, private). **import**/**export** para clases, funciones, constantes, modulos, etc.
 
-- 7 - **POO "**: **interface**, **herencia**, **polimorfinsmo**
+- 7 - **POO 2**: **interface**, **herencia**, **polimorfinsmo**
 
 ---
