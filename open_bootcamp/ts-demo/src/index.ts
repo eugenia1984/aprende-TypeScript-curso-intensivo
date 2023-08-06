@@ -1,9 +1,12 @@
-import { 
-  setCookie, 
+import {
+  setCookie,
   getCookieValue,
-  deleteCookie, 
-  deleteAllCookies 
+  deleteCookie,
+  deleteAllCookies
 } from 'cookies-utils'
+import { Curso } from './models/Curso'
+import { Estudiante } from './models/Estudiante'
+import { LISTA_CURSOS } from './mock/cursos.mock'
 
 /*****************************************************************
 ********************  Tipado  de  datos  *************************
@@ -509,11 +512,11 @@ const leerEnLocalStorage = (): void => {
 -Se ven en el mismo navegador, con las herramientas de desarrollo,
 en el Aplication esta el Storae: LocalStorage, SesisonStorage(se
 pierde por sesion) y cookies; Cache, etc
-*/ 
+*/
 const enum SameSite {
   lax = 'lax',
-  strict= 'strict',
-  none= 'none'
+  strict = 'strict',
+  none = 'none'
 }
 interface CookieOptions {
   name: string
@@ -526,10 +529,10 @@ interface CookieOptions {
   sameSite?: SameSite
 }
 const cookieOptions: CookieOptions = {
-  name: "usuario", 
-  value: "Eugenia", 
-  maxAge: 600, 
-  expires: new Date(2099, 10, 1), 
+  name: "usuario",
+  value: "Eugenia",
+  maxAge: 600,
+  expires: new Date(2099, 10, 1),
   path: "/"
 }
 
@@ -556,20 +559,20 @@ class Temporizador {
   public empezar(): void {
     setTimeout(() => {
       // Comprobamos que exista la función terminar, dado que es opcional
-      if(!this.terminar) return
+      if (!this.terminar) return
       // cuando pasen los 10seg se ejecuta la función terminar()
       this.terminar(Date.now())
     }, 1000)
   }
 }
 
-const miTemporizador:Temporizador = new Temporizador()
+const miTemporizador: Temporizador = new Temporizador()
 // Definimos la función del callback a ejecutar a los 10seg
-miTemporizador.terminar= (tiempo: number) => console.log(`Evento terminado en: ${tiempo} `)
+miTemporizador.terminar = (tiempo: number) => console.log(`Evento terminado en: ${ tiempo } `)
 
 //Lanzamos el temporizador
 // se inicial el timeOut y al terminar, a los 10seg, se ejecuta terminar()
-miTemporizador.empezar() 
+miTemporizador.empezar()
 
 // Ademas del setTimout esta el setInterval
 // Para eliminar la función del stack de ejecución de la función, util para el setInterval
@@ -582,7 +585,32 @@ document.getElementById("boton-login").addEventListener('click', () => console.l
 con React directamente utilizamos el onClick en el <button>
 */
 
-// extender de la clase EventTarget
-class Temporizador2 extends EventTarget {
+/******************************************************
+***********************  CLASES  **********************
+*******************************************************/
+// POO
+// Las clases pueden ser PUBLIC(por default) o PRIVATE
+// Pueden tener PROPERTIES y METHODS
 
-}
+// Ejemplo de clase Estudiante
+
+// instanciamos un objeto de la clase Curso
+// const cursoTS: Curso = new Curso('TypeScript', 15)
+// const cursoJS: Curso = new Curso('JavaScript', 20)
+// const listaCursos: Curso[] = []
+// listaCursos.push(cursoTS, cursoJS)
+
+// instanciamos un objeto de la clase Estudiante, usnaod el mock
+const Martin: Estudiante = new Estudiante('Martin', LISTA_CURSOS, 'San José')
+
+const cursoAngular: Curso = new Curso('Angular', 40)
+Martin.cursos.push(cursoAngular)
+
+console.timeLog(`${ Martin.nombre } estudia:`)
+Martin.cursos.forEach((curso: Curso) => console.log(`${ curso.nombre } (${ curso.horas } hs)`))
+
+// Saber la instancia de un objeto/variable
+// InstanceOf(Empleado) -> para saber si es una instancia de
+// TypeOf(martin) -> para saber el tipo
+// Se usan en JS, porque en TS si ya tenemos todo bien tipado no lo necesitarìamos usar, 
+// más si no usamos los any implícitos
