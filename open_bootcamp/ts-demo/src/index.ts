@@ -1,4 +1,9 @@
-import { setCookie } from 'cookies-utils'
+import { 
+  setCookie, 
+  getCookieValue,
+  deleteCookie, 
+  deleteAllCookies 
+} from 'cookies-utils'
 
 /*****************************************************************
 ********************  Tipado  de  datos  *************************
@@ -244,9 +249,9 @@ let nuevoEstado = {
   session: 4
 }
 
-/*******************************************************
-*********************  Funciones  **********************
-*******************************************************/
+/***********************************************************
+***********************  Funciones  ************************
+***********************************************************/
 // los nombres en camelCase
 
 /**
@@ -477,9 +482,9 @@ function mostrarError(error: string): void {
 //   console.log(`Ha habido un error: ${error}, el código es: ${codigo}`)
 // }
 
-/***********************************************************
-*****************  PERSISTENCIA DE DATOS  ****************** 
-***********************************************************/
+/***************************************************************
+*******************  PERSISTENCIA DE DATOS  ******************** 
+***************************************************************/
 
 /********************* LocalStorage ************************/
 // Almacena los datos en el navegador, persiste, 
@@ -499,7 +504,85 @@ const leerEnLocalStorage = (): void => {
 // sesion del navegador, si cambias de sesion se pierde
 
 /************************  Cookies **************************/
-// Tienen una fecha de cauducidad y tienen un ámbito de URL
+/*
+-Tienen una fecha de cauducidad y tienen un ámbito de URL
+-Se ven en el mismo navegador, con las herramientas de desarrollo,
+en el Aplication esta el Storae: LocalStorage, SesisonStorage(se
+pierde por sesion) y cookies; Cache, etc
+*/ 
+const enum SameSite {
+  lax = 'lax',
+  strict= 'strict',
+  none= 'none'
+}
+interface CookieOptions {
+  name: string
+  value: string
+  maxAge?: number
+  expires?: Date
+  path?: string
+  domain?: string
+  secure?: boolean
+  sameSite?: SameSite
+}
+const cookieOptions: CookieOptions = {
+  name: "usuario", 
+  value: "Eugenia", 
+  maxAge: 600, 
+  expires: new Date(2099, 10, 1), 
+  path: "/"
+}
 
+// seteamos la cookie
+setCookie(cookieOptions)
 
+// Leer una cookie
+let cookieLeida = getCookieValue("usuario")
 
+// Eliminar la cookie
+deleteCookie("usuario")
+
+// Eliminar todas las cookies
+deleteAllCookies()
+
+/************************************************
+******************  EVENTOS  ******************** 
+************************************************/
+// Clase Temporizador, para generar un evento a los 10seg
+class Temporizador {
+  // atributo
+  public terminar?: (tiempo: number) => void
+  // metodo
+  public empezar(): void {
+    setTimeout(() => {
+      // Comprobamos que exista la función terminar, dado que es opcional
+      if(!this.terminar) return
+      // cuando pasen los 10seg se ejecuta la función terminar()
+      this.terminar(Date.now())
+    }, 1000)
+  }
+}
+
+const miTemporizador:Temporizador = new Temporizador()
+// Definimos la función del callback a ejecutar a los 10seg
+miTemporizador.terminar= (tiempo: number) => console.log(`Evento terminado en: ${tiempo} `)
+
+//Lanzamos el temporizador
+// se inicial el timeOut y al terminar, a los 10seg, se ejecuta terminar()
+miTemporizador.empezar() 
+
+// Ademas del setTimout esta el setInterval
+// Para eliminar la función del stack de ejecución de la función, util para el setInterval
+delete miTemporizador.terminar
+
+// Utilizando los elementos del DOm les puedo definir funciones ante eventos
+/*
+Ejemplo:
+document.getElementById("boton-login").addEventListener('click', () => console.log('Click en login'))
+con React directamente utilizamos el onClick en el <button>
+*/
+
+// extender de la clase EventTarget
+class Temporizador2 extends EventTarget {
+
+}

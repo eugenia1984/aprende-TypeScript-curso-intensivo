@@ -8,7 +8,7 @@
 
 - [<img width="40" height="40" src="https://img.icons8.com/color/40/nodejs.png" alt="nodejs"/> **Node**](https://nodejs.org/es), con `node --version` vemos el númeor de versión y reconfirmamos que lo tenemos instalado
 
-- [<img width="40" height="40" src="https://img.icons8.com/color/40/npm.png" alt="npm"/> **npm**](https://www.npmjs.com/) el gestor de paquetes para isntalar las dependencias
+- [<img width="40" height="40" src="https://img.icons8.com/color/40/npm.png" alt="npm"/> **npm**](https://www.npmjs.com/) el gestor de paquetes para isntalar las dependencias: [@types/node](https://www.npmjs.com/package/@types/node), [nodemon](https://www.npmjs.com/package/nodemon), [rimraf](https://www.npmjs.com/package/rimraf), [ts-node](https://www.npmjs.com/package/ts-node), [typescript](typescript) y [cookies-utils](https://www.npmjs.com/package/cookies-utils)
 
 - [<img width="40" height="40" src="https://img.icons8.com/color/40/typescript.png" alt="typescript"/> **TypeScript**](https://www.typescriptlang.org/), es un superset de JavaScript
 
@@ -128,7 +128,7 @@ Y también: `"start:prod":"npm run build:prod && node build/index.js"`, para obv
 
 - 4 - **funciones**: parametros opcionales, varios parametros, spread operator con multiparametros, return, arrow function, funcion callback, sobrecarga de funciones, funciones asíncronas (async-await, .then() - .catch() - .finally()), funciones generadoras(yield). **type**
 
-- 5 - **persistencia de datos** en el navegador (LocalStorage-nativo de JavaSCript-, SessionStorage-nativo de JavaScript-, Cookies se trabaja manual o con librerias). Paquete npm **cookie-utils**: `npm install cookies-utils`. Ejecución de **eventos**
+- 5 - **persistencia de datos** en el navegador (LocalStorage-nativo de JavaSCript-, SessionStorage-nativo de JavaScript-, Cookies se trabaja manual o con librerias). Paquete npm **cookie-utils**: `npm install cookies-utils` (existe la libreria **cookies** que es para peticiones HTTP, más pensado para el Back, para un server de Express). Ejecución de **eventos**
 
 
 ---
