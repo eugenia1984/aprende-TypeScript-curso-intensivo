@@ -167,4 +167,19 @@ Y también: `"start:prod":"npm run build:prod && node build/index.js"`, para obv
 }
 ```
 
-Dentro de una nueva carpeta .vscode, no habria que subirla a GitHub, yo la dejo a modo de ejemplo
+Dentro de una nueva carpeta .vscode, no habria que subirla a GitHub, yo la dejo a modo de ejemplo.
+
+Al dar al **run**, ya marcando algun breakpoint:
+
+![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/a8d772db-666b-4be6-b94e-595f36267805)
+
+Variables locales y globales:
+
+
+![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/ca283dcc-9604-4fc2-b412-ccbc56395de8)
+
+Pudo ver el valor de una variable:
+
+![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/4e005200-f901-45d4-84b8-467d7ffdfca4)
+
+
