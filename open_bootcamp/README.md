@@ -1,8 +1,5 @@
 # :computer: Curso de TypeScript de OpenBootcamp
 
-[https://github.com/gorkavillara/curso-typescript-05-junio/tree/tema-01-introduccion](https://github.com/gorkavillara/curso-typescript-05-junio/tree/tema-01-introduccion) es el repositorio en GitHub donde subieron el código por si tenemos dudas.
-
----
 
 ## <img width="40" height="40" src="https://img.icons8.com/stickers/40/maintenance.png" alt="maintenance"/> Herramientas
 
@@ -224,5 +221,9 @@ Ejemplo de **Watch**:
 Pide instalar una dependencia -> le damos el ok
 
 Tnemos que tner instalada **ESLint** como extensión de VSC (la oficial de Microsoft).
+
+---
+
+[https://github.com/gorkavillara/curso-typescript-05-junio/tree/tema-01-introduccion](https://github.com/gorkavillara/curso-typescript-05-junio/tree/tema-01-introduccion) es el repositorio en GitHub donde subieron el código por si tenemos dudas.
 
 ---
