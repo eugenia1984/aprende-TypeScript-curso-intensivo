@@ -130,5 +130,6 @@ Y también: `"start:prod":"npm run build:prod && node build/index.js"`, para obv
 
 - 5 - **persistencia de datos** en el navegador (LocalStorage-nativo de JavaSCript-, SessionStorage-nativo de JavaScript-, Cookies se trabaja manual o con librerias). Paquete npm **cookie-utils**: `npm install cookies-utils` (existe la libreria **cookies** que es para peticiones HTTP, más pensado para el Back, para un server de Express). Ejecución de **eventos**
 
+- 6 - **Clases**
 
 ---
