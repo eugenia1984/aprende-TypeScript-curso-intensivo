@@ -19,7 +19,9 @@ Dentro de la carpeta  [<img width="40" height="40" src="https://img.icons8.com/e
 
 -> [<img width="40" height="40" src="https://img.icons8.com/stickers/40/book.png" alt="book"/> Libro de TypeScript](https://github.com/gibbok/typescript-book)
 
--> **Extra**: [<img width="40" height="40" src="https://img.icons8.com/dusk/40/monitor--v1.png" alt="monitor--v1"/> El curso de TypeScript de OpenBootcamp](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/open_bootcamp)
+-> **Extra**: 
+
+- [<img width="40" height="40" src="https://img.icons8.com/dusk/40/monitor--v1.png" alt="monitor--v1"/> El curso de TypeScript de OpenBootcamp](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/open_bootcamp)
 
 ---
 
