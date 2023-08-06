@@ -1,13 +1,8 @@
-// Esto es un comentario en TS, igual que en JS
+import { setCookie } from 'cookies-utils'
 
-/**
- * Asi podemos documentar en TS nuestros proyectos: 
- * funciones, componentes, etc
- */
-
-/****************************************************************/
-/********************  Tipado  de  datos  ***********************/
-/***************************************************************/
+/*****************************************************************
+********************  Tipado  de  datos  *************************
+*****************************************************************/
 
 /****************  Declaración de variables ********************/
 // tipado inferido, infiere que es de tipo string
@@ -42,7 +37,7 @@ b = true
 c = 2.34
 
 
-/********************  Siempre evitar usar ANY  *****************/
+/********************  Siempre evitar usar ANY  *******************/
 // Se pierde el tipado, se puede asignar distintos tipos
 // de datos a una misma variable
 
@@ -74,7 +69,7 @@ enum PuestoCarrera {
 let puestoMaraton: PuestoCarrera = PuestoCarrera.Segundo
 // el valor que guardo es 2
 
-/*****************  Ejemplo de interface ***************/
+/********************  Ejemplo de interface ******************/
 interface Tarea {
   nombre: string,
   estado: Estado,
@@ -104,9 +99,9 @@ let coche: Producto = {
   anio: 2012
 }
 
-/****************************************** 
- **********   Condicionales   ************
- *****************************************/
+/************************************************** 
+ **************   Condicionales   *****************
+ *************************************************/
 
 // Operador ternario
 console.log(coche.anio < 2000 ?
@@ -154,9 +149,9 @@ try {
   console.log(`Error: ${ error }`)
 }
 
-/**************************************** 
- *************  Bucles   ****************
- ***************************************/
+/************************************************* 
+ *****************  Bucles   *********************
+ ************************************************/
 
 let newTaskList: Tarea[] = [
   {
@@ -219,9 +214,9 @@ do {
   numeroMenorACinco++
 } while (numeroMenorACinco < 5)
 
-/************************************************
- ****** Destructuraciòn y Spread Operator ******* 
- ***********************************************/
+/************************************************************
+ ************ Destructuraciòn y Spread Operator ************* 
+ ***********************************************************/
 
 // Asignación múltiple de variables -> desestructuración 
 /*
@@ -249,9 +244,9 @@ let nuevoEstado = {
   session: 4
 }
 
-/*********************************************
-****************  Funciones  *****************
-*********************************************/
+/*******************************************************
+*********************  Funciones  **********************
+*******************************************************/
 // los nombres en camelCase
 
 /**
@@ -302,7 +297,7 @@ sayByeOptional('Juanjo')
 
 // Varios parametros
 function variosParams(nombre: string, apellido?: string, edad: number = 18) {
-  (apellido)? console.log(`${nombre} ${apellido}, tiene ${edad} años.`) : console.log(`${nombre}, tiene ${edad} años.`)
+  (apellido) ? console.log(`${ nombre } ${ apellido }, tiene ${ edad } años.`) : console.log(`${ nombre }, tiene ${ edad } años.`)
 }
 
 variosParams('Martin') // Martin, tiene 18 años
@@ -312,9 +307,9 @@ variosParams('Analía', 'Bruni', 30) // Analía Bruni, tiene 30 años
 
 // Varios tipos
 function exampleDifferentTypes(a: string | number) {
-  if (typeof(a) === 'string') {
+  if (typeof (a) === 'string') {
     console.log('Es un string')
-  } else  if (typeof(a) === 'number') {
+  } else if (typeof (a) === 'number') {
     console.log('Es un number')
   } else {
     console.log('No es string ni number')
@@ -329,7 +324,7 @@ function exampleDifferentTypes(a: string | number) {
  * @returns: the full name (first name and last name) 
  */
 function exampleReturn(nombre: string, apellidos: string): string {
-  return `${nombre} ${apellidos}`
+  return `${ nombre } ${ apellidos }`
 }
 
 console.log(exampleReturn('Marìa', 'Costa'))
@@ -353,29 +348,29 @@ type Empleado = {
   apellido: string
   edad: number
 }
-let empleadoMartin:Empleado = {
+let empleadoMartin: Empleado = {
   nombre: 'Martin',
   apellido: 'San Jose',
   edad: 30
 }
 
-/************************  Arrow function  ***************************/ 
-const showEmployee = (empleado: Empleado): string => `${empleado.nombre} ${empleado.apellido} tiene ${empleado.edad} años`
+/************************  Arrow function  ***************************/
+const showEmployee = (empleado: Empleado): string => `${ empleado.nombre } ${ empleado.apellido } tiene ${ empleado.edad } años`
 
 showEmployee(empleadoMartin)
 
-const employeeData = ( empleado:Empleado): string => {
-  if(empleado.edad > 70) {
-    return `${empleado.nombre} está en edad de jubilarse`
+const employeeData = (empleado: Empleado): string => {
+  if (empleado.edad > 70) {
+    return `${ empleado.nombre } está en edad de jubilarse`
   } else {
-    return `${empleado.nombre} está en edad laboral` 
+    return `${ empleado.nombre } está en edad laboral`
   }
 }
 
 employeeData(empleadoMartin)
 
-const getSalary = ( empleado: Empleado, cobrar: () => string) => {
-  if(empleado.edad > 70) {
+const getSalary = (empleado: Empleado, cobrar: () => string) => {
+  if (empleado.edad > 70) {
     return
   } else {
     cobrar() // callback a ejecutar
@@ -383,30 +378,30 @@ const getSalary = ( empleado: Empleado, cobrar: () => string) => {
 }
 
 const cobrarEmpleado = (empleado: Empleado) => {
-  console.log(`${empleado.nombre} cobra su salario`)
+  console.log(`${ empleado.nombre } cobra su salario`)
 }
 
 getSalary(empleadoMartin, () => 'Cobrar salario')
 
-/********************  Funciones asincronas ******************************/ 
+/********************  Funciones asincronas ******************************/
 // Promise<string> -> Represents the completion of an asynchronous operation
 
-async function asyncExample():Promise<string> {
+async function asyncExample(): Promise<string> {
   // Aca podria hacer una peticion HTTP
- await console.log('Tarea a completar antes de seguir con la secuencia de instrucciones')
- console.log('Tarea completada')
- return 'Completado'
+  await console.log('Tarea a completar antes de seguir con la secuencia de instrucciones')
+  console.log('Tarea completada')
+  return 'Completado'
 }
 
 // .then() se va a hacer una vez que completa la promesa
 // .catch() para capturar errores
 // finally() se ejecuta siempre
 asyncExample()
-  .then(response => console.log('Respuesta: ',response))
+  .then(response => console.log('Respuesta: ', response))
   .catch(error => console.error('Error: ', error))
   .finally(() => console.info('Todo terminado'))
 
-/*********************  Funcion generadora ****************************/ 
+/*********************  Funcion generadora ****************************/
 /*
 - What is a generator function?
 A generator function is a special function that can be exited AND re-entered.
@@ -430,7 +425,7 @@ You can only use it in a generator function.
 // yield -> para emitir valores
 function* generatorExample() {
   let index = 0
-  while(index < 5) {
+  while (index < 5) {
     // emitimos un valor incrementado
     yield index++
   }
@@ -461,7 +456,7 @@ function* worker(valor: number) {
   yield valor + 3
 }
 
-let generatorSaga = watcher(0) 
+let generatorSaga = watcher(0)
 console.log(generatorSaga.next().value) // 0 (lo ha hecho el watcher)
 console.log(generatorSaga.next().value) // 1 (lo ha hecho el worker)
 console.log(generatorSaga.next().value) // 2 (lo ha hecho el worker)
@@ -473,8 +468,8 @@ console.log(generatorSaga.next().value) // 4 (lo ha hecho el watcher)
 // Una misma funcion, dependiendo del parametro que recibe,
 // hace una cosa u otra. En cambio si para un mismo parametro 
 // puedo tener más de un tipo, entonces ahi utilizamos ||
-function mostrarError(error: string):void {
-  console.log(`Ha habido un error: ${error}`)
+function mostrarError(error: string): void {
+  console.log(`Ha habido un error: ${ error }`)
 }
 
 // Ejemplo de sobrecarga:
@@ -482,28 +477,28 @@ function mostrarError(error: string):void {
 //   console.log(`Ha habido un error: ${error}, el código es: ${codigo}`)
 // }
 
-/******************************************
- *******  PERSISTENCIA DE DATOS  ********** 
- *****************************************/
+/***********************************************************
+*****************  PERSISTENCIA DE DATOS  ****************** 
+***********************************************************/
 
-/************ LocalStorage **************/
+/********************* LocalStorage ************************/
 // Almacena los datos en el navegador, persiste, 
 // no se elimina automaticamente
+// 'nombre' es la key, y 'Euge' es el value que guardo
 const guardarEnLocalStorage = (): void => {
-  // 'nombre' es la key, y 'Euge' es el value que guardo
   localStorage.set('nombre', 'Euge')
 }
 
-const leerEnLocalStorage = ():void => {
-  // si estaba guardado ok voy a tener 'Euge', sino undefined
+// si estaba guardado ok voy a tener 'Euge', sino undefined
+const leerEnLocalStorage = (): void => {
   let name = localStorage.get('nombre')
 }
 
-/*********** SessionStorage *************/
-// La sesion del navegador, los datos se persisten en la 
+/******************* SessionStorage *************************/
+// La sesion del navegador, los datos se persisten en la
 // sesion del navegador, si cambias de sesion se pierde
 
-/***************  Cookies **************/
+/************************  Cookies **************************/
 // Tienen una fecha de cauducidad y tienen un ámbito de URL
 
 
