@@ -23,8 +23,7 @@ Dentro de la carpeta  [<img width="40" height="40" src="https://img.icons8.com/e
 
 - [<img width="20" height="20" src="https://img.icons8.com/dusk/20/monitor--v1.png" alt="monitor--v1"/> El curso de TypeScript de OpenBootcamp](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/open_bootcamp)
 
-- [<img width="20" height="20" src="https://img.icons8.com/dusk/20/monitor--v1.png" alt="monitor--v1"/> Todo sobre Patrones de Diseño con JavaScript y TypeScript](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/patrones_disenio)
-, el curso de UDemy de Alvaro Chirou
+- [<img width="20" height="20" src="https://img.icons8.com/dusk/20/monitor--v1.png" alt="monitor--v1"/> Todo sobre Patrones de Diseño con JavaScript y TypeScript](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/patrones_disenio), el curso de UDemy de Alvaro Chirou
 
 ---
 
@@ -43,7 +42,7 @@ Dentro de la carpeta  [<img width="40" height="40" src="https://img.icons8.com/e
 
 - <img width="30" height="30" src="https://img.icons8.com/color/30/npm.png" alt="npm"/> **NPM**,  el gestor de paquetes para instalar las dependencias: [@types/node](https://www.npmjs.com/package/@types/node), [nodemon](https://www.npmjs.com/package/nodemon), [rimraf](https://www.npmjs.com/package/rimraf), [ts-node](https://www.npmjs.com/package/ts-node), [typescript](typescript) y [cookies-utils](https://www.npmjs.com/package/cookies-utils)
 
-
+- <img width="30" height="30" src="https://img.icons8.com/color/30/eslint.png" alt="eslint"/> ESLint
 
 ---
 
