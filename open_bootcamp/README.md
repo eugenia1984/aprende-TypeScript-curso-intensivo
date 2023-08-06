@@ -134,4 +134,6 @@ Y también: `"start:prod":"npm run build:prod && node build/index.js"`, para obv
 
 - 7 - **POO 2**: **interface**, **herencia** (clase padre/hija, extends), **polimorfismo** y decoradores. TS tiene herencia unica, no multiple, pero por medio de las interfeces se puede lograr esto.
 
+- - 8 - **patrones de diseño** y refactorizaciòn del código
+
 ---
