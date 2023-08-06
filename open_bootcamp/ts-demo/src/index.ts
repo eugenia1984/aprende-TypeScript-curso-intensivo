@@ -638,7 +638,7 @@ jefe.trabajadores.forEach((trabajador: Trabajador) =>
 )
 jefe.saludar()
 
-/***************  INTERFACES **************/
+/***********************  INTERFACES ***************************/
 let programar: ITarea = {
   titulo: 'Programar en TypeScript',
   descripcion: 'Practicar para aprender a desarrollar con TypeScript',
@@ -664,7 +664,7 @@ de forma obligatoria
 - class: para implementar las interfacer o crear objetos complejos
 */
 
-/******************  Decoradores **********************/
+/**************************  DECORADORES *************************/
 /*
 Funciones declaradas a traves de un simbolo: @, para dar más metadatos a:
 - clases
@@ -674,49 +674,53 @@ Funciones declaradas a traves de un simbolo: @, para dar más metadatos a:
 -> Para usarlos en tsconfig tener habilitado: "experimentalDecorators": true, 
 */
 
-function Override(label: string) {
-  return function (target: any, key: string) {
-    Object.defineProperty(target, key, {
-      configurable: false,
-      get: () => label
-    })
-  }
-}
+// function Override(label: string) {
+//   return function (target: any, key: string) {
+//     Object.defineProperty(target, key, {
+//       configurable: false,
+//       get: () => label
+//     })
+//   }
+// }
 
-class PruebaDecorador {
-  @Override('Prueba') // llamar a la funcion Override
-  nombre:string = 'Martin'
-}
+// class PruebaDecorador {
+//   @Override('Prueba') // llamar a la funcion Override
+//   nombre:string = 'Martin'
+// }
 
-let prueba = new PruebaDecorador()
-console.log(prueba.nombre) // 'Prueba'
+// let prueba = new PruebaDecorador()
+// console.log(prueba.nombre) // 'Prueba'
 
 // otra funcion para usarla como decorador
-function SoloLectura(target: any, key: string) {
-  Object.defineProperty(target, key, {
-    writable: false
-  })
-}
+// function SoloLectura(target: any, key: string) {
+//   Object.defineProperty(target, key, {
+//     writable: false
+//   })
+// }
 
-class pruebaSoloLectura {
-  @SoloLectura
-  nombre: string = ''
-}
+// class pruebaSoloLectura {
+//   @SoloLectura
+//   nombre: string = ''
+// }
 
-let pruebaLectura = new pruebaSoloLectura()
-pruebaLectura.nombre = 'Martin'
-console.log(pruebaLectura.nombre) // undefined -> no se le puede dar un valor
+// let pruebaLectura = new pruebaSoloLectura()
+// pruebaLectura.nombre = 'Martin'
+// console.log(pruebaLectura.nombre) // undefined -> no se le puede dar un valor
 
 // Decorador para parametros de un metodo
-function mostrarPosicion(target:any, propertyKey: string, parameterIndex: number) {
-  console.log(`Posición ${parameterIndex}`)
-}
+// function mostrarPosicion(target:any, propertyKey: string, parameterIndex: number) {
+//   console.log(`Posición ${parameterIndex}`)
+// }
 
-class PruebaMetodoDecorador {
-  prueba(a:string, @mostrarPosicion b:boolean) {
-    console.log(b)
-  }
-}
+// class PruebaMetodoDecorador {
+//   prueba(a:string, @mostrarPosicion b:boolean) {
+//     console.log(b)
+//   }
+// }
 
 // Usamos el metodo con el parametro y su decorador
-let pruebaDecoradorPArametro = new PruebaMetodoDecorador().prueba('Hola', false)
+// let pruebaDecoradorPArametro = new PruebaMetodoDecorador().prueba('Hola', false)
+
+/****************************************************
+******************   DEPURACION   ******************* 
+****************************************************/

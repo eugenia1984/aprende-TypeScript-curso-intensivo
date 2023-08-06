@@ -134,6 +134,37 @@ Y también: `"start:prod":"npm run build:prod && node build/index.js"`, para obv
 
 - 7 - **POO 2**: **interface**, **herencia** (clase padre/hija, extends), **polimorfismo** y decoradores. TS tiene herencia unica, no multiple, pero por medio de las interfeces se puede lograr esto.
 
-- - 8 - **patrones de diseño** y refactorizaciòn del código
+- 8 - **patrones de diseño** y refactorización del código
 
 ---
+
+## Depuración de código
+
+- En consola: `npm run build:prod`, ahora en la nueva carpeta **Build** además del index.js voy a tener todos los archivos correspondientes a **models** y ahora también los archivos **.map**
+
+- Del menú de la izquierda en VSC tenemos **run & debbug**, primero lo configuramos con **create a launchjson file**, elejimos **Nodejs** y nos crea el archivo **launch.json** base:
+
+```JSON
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${file}",
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ]
+    }
+  ]
+}
+```
+
+Dentro de una nueva carpeta .vscode, no habria que subirla a GitHub, yo la dejo a modo de ejemplo
