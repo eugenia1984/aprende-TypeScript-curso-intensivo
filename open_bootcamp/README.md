@@ -183,3 +183,16 @@ Pudo ver el valor de una variable:
 ![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/4e005200-f901-45d4-84b8-467d7ffdfca4)
 
 
+Ejemplo de **Watch**:
+
+![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/41570408-2ddb-455e-b6a2-733172bdc8b4)
+
+**Callstak**, por donde se va ejecutando:
+
+![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/f71084a7-644e-433a-ab41-492de5c8cafe)
+
+**LoadedScripts**, todos los scripts que fuimos corriendo:
+
+![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/0b9e2b53-4f14-4340-913d-d81d3a556c38)
+
+---
