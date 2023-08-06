@@ -126,8 +126,8 @@ Y también: `"start:prod":"npm run build:prod && node build/index.js"`, para obv
 
 - 3 - manejo de errores: **try-catch**
 
-- 4 - **funciones**: parametros opcionales, varios parametros, spread operator con multiparametros, return, arrow function, funcion callback, sobrecarga de funciones, funciones asíncronas (async-await, .then() - .catch() - .finally(), funciones generadoras(yield). **type**
+- 4 - **funciones**: parametros opcionales, varios parametros, spread operator con multiparametros, return, arrow function, funcion callback, sobrecarga de funciones, funciones asíncronas (async-await, .then() - .catch() - .finally()), funciones generadoras(yield). **type**
 
-- 5 - **persistencia de datos** en el navegador (LocalStorage, SessionStorage, Cookies) se y ejecución de **eventos**
+- 5 - **persistencia de datos** en el navegador (LocalStorage-nativo de JavaSCript-, SessionStorage-nativo de JavaScript-, Cookies se trabaja manual o con librerias) y ejecución de **eventos**
 
 ---
