@@ -138,7 +138,7 @@ Y también: `"start:prod":"npm run build:prod && node build/index.js"`, para obv
 
 ---
 
-## Depuración de código
+## <img width="40" height="40" src="https://img.icons8.com/dusk/40/bug.png" alt="bug"/>  Depuración de código
 
 - En consola: `npm run build:prod`, ahora en la nueva carpeta **Build** además del index.js voy a tener todos los archivos correspondientes a **models** y ahora también los archivos **.map**
 
@@ -196,3 +196,7 @@ Ejemplo de **Watch**:
 ![image](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/0b9e2b53-4f14-4340-913d-d81d3a556c38)
 
 ---
+
+## <img width="40" height="40" src="https://img.icons8.com/color/40/eslint.png" alt="eslint"/> ESLint
+
+- Para marcar reglas y todo el equipo programe de manera similar
