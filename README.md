@@ -23,7 +23,9 @@ Dentro de la carpeta  [<img width="40" height="40" src="https://img.icons8.com/e
 
 - [<img width="40" height="40" src="https://img.icons8.com/dusk/40/monitor--v1.png" alt="monitor--v1"/> El curso de TypeScript de OpenBootcamp](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/open_bootcamp)
 
-- Todo sobre Patrones de Diseño con JavaScript y TypeScript, el curso de UDemy de Alvaro Chirou
+- [Todo sobre Patrones de Diseño con JavaScript y TypeScript](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/patrones_disenio)
+), el curso de UDemy de Alvaro Chirou
+
 ---
 
 
