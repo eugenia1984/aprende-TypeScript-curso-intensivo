@@ -200,3 +200,29 @@ Ejemplo de **Watch**:
 ## <img width="40" height="40" src="https://img.icons8.com/color/40/eslint.png" alt="eslint"/> ESLint
 
 - Para marcar reglas y todo el equipo programe de manera similar
+
+- Para instalarlo en el proyecto:: `npm install eslint --save-dev`
+
+- Ahora en los node_modules tenemos el @ESLint, hay que configurarlo: `./node_modules/.bin/eslint --init` y respondiendo las preguntas se va configurando:
+
+-How would you like to use ESLint? style
+
+-What type of modules does your project use? JavaScript modules(import/export)
+
+-Which framework does your project use? None of these
+
+-Doeas you project use TypeScript?  YEs
+
+-Where does your code run? Node
+
+-How would you like to define a style for your proyect? Use a popular style guide 
+
+-Which style guide to you want to follo? Standard
+
+-What format do you want youe config file to be in? JSON
+
+Pide instalar una dependencia -> le damos el ok
+
+Tnemos que tner instalada **ESLint** como extensión de VSC (la oficial de Microsoft).
+
+---

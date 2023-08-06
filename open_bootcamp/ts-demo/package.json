@@ -29,6 +29,7 @@
   "homepage": "https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo#readme",
   "devDependencies": {
     "@types/node": "^20.4.5",
+    "eslint": "^8.46.0",
     "nodemon": "^3.0.1",
     "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
