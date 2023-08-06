@@ -706,3 +706,17 @@ class pruebaSoloLectura {
 let pruebaLectura = new pruebaSoloLectura()
 pruebaLectura.nombre = 'Martin'
 console.log(pruebaLectura.nombre) // undefined -> no se le puede dar un valor
+
+// Decorador para parametros de un metodo
+function mostrarPosicion(target:any, propertyKey: string, parameterIndex: number) {
+  console.log(`Posición ${parameterIndex}`)
+}
+
+class PruebaMetodoDecorador {
+  prueba(a:string, @mostrarPosicion b:boolean) {
+    console.log(b)
+  }
+}
+
+// Usamos el metodo con el parametro y su decorador
+let pruebaDecoradorPArametro = new PruebaMetodoDecorador().prueba('Hola', false)
