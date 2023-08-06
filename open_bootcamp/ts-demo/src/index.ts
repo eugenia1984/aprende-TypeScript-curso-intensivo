@@ -609,6 +609,9 @@ Martin.cursos.push(cursoAngular)
 console.timeLog(`${ Martin.nombre } estudia:`)
 Martin.cursos.forEach((curso: Curso) => console.log(`${ curso.nombre } (${ curso.horas } hs)`))
 
+// Conocer las horas estudiadas, usando el getter
+Martin.horasEstudiadas
+
 // Saber la instancia de un objeto/variable
 // InstanceOf(Empleado) -> para saber si es una instancia de
 // TypeOf(martin) -> para saber el tipo
