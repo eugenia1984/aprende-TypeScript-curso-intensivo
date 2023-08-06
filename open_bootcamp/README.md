@@ -132,6 +132,6 @@ Y también: `"start:prod":"npm run build:prod && node build/index.js"`, para obv
 
 - 6 - **POO 1**: **Clases** (properties, methods, constructor, getter, setter, accesos: public, private). **import**/**export** para clases, funciones, constantes, modulos, etc.
 
-- 7 - **POO 2**: **interface**, **herencia**, **polimorfinsmo**
+- 7 - **POO 2**: **interface**, **herencia**, **polimorfismo** y decoradores
 
 ---
