@@ -614,7 +614,9 @@ Martin.horasEstudiadas
 
 /*
 Saber la instancia de un objeto/variable:
--  InstanceOf(Empleado) -> para saber si es una instancia de
+- InstanceOf(Empleado) -> para saber si es una instancia de
 - TypeOf(martin) -> para saber el tipo
 Se usan en JS, porque en TS si ya tenemos todo bien tipado no lo necesitarìamos usar, más si no usamos los any implícitos
 */
+
+let texto = new String('Hola') // string constructor
