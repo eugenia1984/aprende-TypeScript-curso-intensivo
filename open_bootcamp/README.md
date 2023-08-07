@@ -131,7 +131,9 @@ Y también: `"start:prod":"npm run build:prod && node build/index.js"`, para obv
 
 - 7 - **POO 2**: **interface**, **herencia** (clase padre/hija, extends), **polimorfismo** y decoradores. TS tiene herencia unica, no multiple, pero por medio de las interfeces se puede lograr esto.
 
-- 8 - **patrones de diseño** y refactorización del código
+- 8 - **patrones de diseño**, refactorización del código, ESLint
+
+- 9 - tips de console
 
 ---
 
@@ -221,6 +223,49 @@ Ejemplo de **Watch**:
 Pide instalar una dependencia -> le damos el ok
 
 Tnemos que tner instalada **ESLint** como extensión de VSC (la oficial de Microsoft).
+
+Y en la parte de **rules** lo configuramos:
+
+```
+ rules: {
+    quotes: ["error", "double"],
+    "comma-spacing": ["off"]
+  },
+```
+
+**off** -> para quitarlo
+
+**warn** o **1** -> para activar al regla como un aviso
+
+**error** o **2** -> para activar esta regla como error
+
+En el **package.json** hacemos el *script*: `"linting": "eslint",`
+
+
+Entonces desde: `ts_midu\open_bootcamp\ts-demo` : `npm run linting`
+
+Si no hay problema con las reglas:
+
+`
+> ts-demo@1.0.0 linting
+> eslint
+`
+
+Sino se ve el error, para solucionarlo, vamos a crear un nuevo *script*: `"linting:fix": "eslint --fix",` y asi nos va a sobreescribir el archivo, en lo que este mal lo sobreescribe
+
+---
+
+## TYPEDOC
+
+Es una APi de documentación de todo el proyecto. Es más nuevo a JSDoc.
+
+- Lo instalamos: `npm install --save-dev typedoc`
+
+- En el *package.json* armo el script: `"document": "typedoc --out docs src",`, **doc** va a ser el directorio de salida, donde se guarda y **src** es lo que va a documentar. Lo corro con `npm run document`.
+
+Y se crea una nueva carpeta **docs** con un **index.html**, capaz porque yo tenia el README mi index.html es el README.
+
+Hay un [playground](https://microsoft.github.io/tsdoc/#) para practicar, es compatible con MARKDOWN (hay plugins en VSC para tener la preview de los archivos .md, yo ya la tengo instalada) y tambien está toda al documentación: [https://typedoc.org/guides/doccomments](https://typedoc.org/guides/doccomments)
 
 ---
 

@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsNode": "cd src && ts-node index.ts",
     "start": "nodemon",
+    "linting": "eslint",
+    "linting:fix": "eslint --fix",
+    "document": "typedoc --out docs src",
     "transpilation": "tsc",
     "build:prod": "rimraf ./build && tsc",
     "start:prod": "npm run build:prod && node build/index.js"
@@ -33,6 +36,7 @@
     "nodemon": "^3.0.1",
     "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
+    "typedoc": "^0.24.8",
     "typescript": "^5.1.6"
   },
   "dependencies": {

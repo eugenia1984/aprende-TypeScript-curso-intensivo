@@ -1,0 +1,232 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>ts-demo</title><meta name="description" content="Documentation for ts-demo"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/search.js" id="tsd-search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base=".">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">ts-demo</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-content">
+<div class="tsd-page-title">
+<h2>ts-demo</h2></div>
+<div class="tsd-panel tsd-typography"><a id="md:computer-curso-de-typescript-de-openbootcamp" class="tsd-anchor"></a><h1><a href="#md:computer-curso-de-typescript-de-openbootcamp">:computer: Curso de TypeScript de OpenBootcamp</a></h1><a id="md:-herramientas" class="tsd-anchor"></a><h2><a href="#md:-herramientas"><img width="40" height="40" src="https://img.icons8.com/stickers/40/maintenance.png" alt="maintenance"/> Herramientas</a></h2><ul>
+<li><p><a href="https://nodejs.org/es"><img width="40" height="40" src="https://img.icons8.com/color/40/nodejs.png" alt="nodejs"/> <strong>Node</strong></a>, con <code>node --version</code> vemos el númeor de versión y reconfirmamos que lo tenemos instalado</p>
+</li>
+<li><p><a href="https://www.npmjs.com/"><img width="40" height="40" src="https://img.icons8.com/color/40/npm.png" alt="npm"/> <strong>npm</strong></a> el gestor de paquetes para instalar las dependencias: <a href="https://www.npmjs.com/package/@types/node">@types/node</a>, <a href="https://www.npmjs.com/package/nodemon">nodemon</a>, <a href="https://www.npmjs.com/package/rimraf">rimraf</a>, <a href="https://www.npmjs.com/package/ts-node">ts-node</a>, <a href="typescript">typescript</a> y <a href="https://www.npmjs.com/package/cookies-utils">cookies-utils</a></p>
+</li>
+<li><p><a href="https://www.typescriptlang.org/"><img width="40" height="40" src="https://img.icons8.com/color/40/typescript.png" alt="typescript"/> <strong>TypeScript</strong></a>, es un superset de JavaScript</p>
+</li>
+<li><p><img width="40" height="40" src="https://img.icons8.com/color/40/visual-studio-code-2019.png" alt="visual-studio-code-2019"/> <strong>Visual Studio Code</strong>, extensiones recomendadas: <strong>material icon</strong> para los iconos en los archivos, <strong>JavaScript and TypeScript Nightly</strong>, <strong>TypeScript Hero</strong>, <strong>ESLint</strong>, <strong>npm</strong> y <strong>npm intellisense</strong>, <strong>Path Intellisense</strong>, <strong>Rainbow Brackets</strong>, <strong>TODO Highligh</strong>, <strong>TODO Tree</strong></p>
+</li>
+</ul>
+<hr>
+<a id="md:-¿qué-hacemos" class="tsd-anchor"></a><h2><a href="#md:-¿qué-hacemos"><img width="40" height="40" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/40/external-command-line-computer-science-flaticons-lineal-color-flat-icons.png" alt="external-command-line-computer-science-flaticons-lineal-color-flat-icons"/> ¿Qué hacemos?</a></h2><ol>
+<li><p><code>mkdir ts-demo</code> para crear la carpeta</p>
+</li>
+<li><p><code>npm init</code> para iniciar un proyecto con el archivo package.json asi se instalan las dependencias. Si utilizamos <code>npm init -y</code> le decimos yes a todo por defecto, pero lo vamos a crear manual, con el <strong>menu de preguntas</strong>:</p>
+</li>
+</ol>
+<ul>
+<li><p>package name: (ts-demo)</p>
+</li>
+<li><p>version: (1.0.0)</p>
+</li>
+<li><p>description: Proyecto de ejemplo para el desarrollo con TS</p>
+</li>
+<li><p>entry point: (index.js)</p>
+</li>
+<li><p>test command: en el caso de que hagamos test, y frameworks como Jest para hacer pruebas unitarias, en este caso no se utilizara, se deja vacio.</p>
+</li>
+<li><p>git repository: <a href="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo">https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo</a></p>
+</li>
+<li><p>keywords: ts, typescript, frontend, javascript -&gt; es opcional, son las palabras claves con las que buscaran el paquete en npm</p>
+</li>
+<li><p>author: Maria Eugenia Costa</p>
+</li>
+<li><p>license: (ISC)</p>
+</li>
+</ul>
+<p>-&gt; Se ve el resumen de como se vera el <strong>package.json</strong></p>
+<ul>
+<li>Is this OK? (yes)</li>
+</ul>
+<ol start="3">
+<li>Agregamos dependencias con npm: <code>npm i --save-dev @types/node nodemon ts-node typescript rimraf</code>, porque son heramientas de <strong>entorno de desarrollo</strong>.</li>
+</ol>
+<ul>
+<li><p><a href="https://www.npmjs.com/package/@types/node">@types/node</a></p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/nodemon">nodemon</a>, para ir actualizando los cambios sin necesidad de estar finalizar la ejecución de la terminal y volver a correrla.</p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/ts-node">ts-node</a></p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/typescript">TypeScript</a></p>
+</li>
+<li><p>rimraf, para generar build más potentes, sin necesidad de usar Webpack.</p>
+</li>
+</ul>
+<p>Y ahora en el packege.json veo:</p>
+<pre><code class="language-JSON"><span class="hl-0">&quot;devDependencies&quot;</span><span class="hl-1">: {</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;@types/node&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;^20.4.5&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;nodemon&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;^3.0.1&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;rimraf&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;^5.0.1&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;ts-node&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;^10.9.1&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;typescript&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;^5.1.6&quot;</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<ol start="4">
+<li><strong>tsconfig</strong> para tener el archivo de configuración de TypeScript, para indicar como se va a transpilar de TypeScript a JavaScript. Lo inicializamos:</li>
+</ol>
+<p><code>npx tsc --init --outDir build --rootDir src --esModuleInterop --resolveJsonModule --lib es6 --module commonjs --allowjs true --noImplicitAny true</code></p>
+<p>-&gt; <strong>--outDir build</strong> el codigo compilado va a ir al directorio build</p>
+<p>-&gt; <strong>rootDir src</strong></p>
+<p>-&gt; <strong>--lib es6</strong> para usar ECMAScript6</p>
+<p>-&gt; <strong>--allowjs</strong> true para tener archivos tanto JsvaScript como TypeScript</p>
+<p>-&gt; <strong>--noImplicitAny true</strong></p>
+<ol start="5">
+<li><p>Creamos la carpeta <strong>src</strong> donde tendremos el codigo fuente del proyecto. Y dentro el <strong>index.ts</strong></p>
+</li>
+<li><p>Agrego un script para ejecutar ts-node: <code>&quot;tsNode&quot;: &quot;cd src &amp;&amp; ts-node index.ts&quot;</code>
+ y desde consola lo ejecuto: <code>npm run tsNode</code>, asi se va a transpilar y ejecutar para ver por consola.</p>
+</li>
+<li><p>Aprovechamos <strong>nodemon</strong> y desde la raiz del proyecto (ts-demo) creamos un archivo <strong>nodemon.json</strong></p>
+</li>
+</ol>
+<pre><code class="language-JSON"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;watch&quot;</span><span class="hl-1">: [</span><span class="hl-0">&quot;src&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;extensions&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;.ts, .js&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;ignore&quot;</span><span class="hl-1">: [],</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;exec&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;ts-node ./src/index.ts&quot;</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>Y agrego un script en el package.json para poder ejecutarlo: <code>&quot;start&quot;: &quot;nodemon&quot;</code>.</p>
+<p>Ahora con: <code>npm run start</code> lo corremos.</p>
+<p>Con <code>ctrl+c</code> paro la ejecución.</p>
+<ol start="8">
+<li><p>Creamos otro script para el build, en el package.json, en la parte de script: <code>&quot;transpilation&quot;: &quot;tsc&quot;</code>. Y lo corremos <code>npm run transpilation</code></p>
+</li>
+<li><p>Agregamos un nuevo script para usar <strong>rimraf</strong>:</p>
+</li>
+</ol>
+<p><code>&quot;build:prod&quot;:&quot;rimraf ./build &amp;&amp; tsc&quot;</code>, hago una <strong>build</strong> (<code>rimraf</code>) desde la carpeta <strong>build</strong> ( <code>./build</code>) y despues lo <strong>traspilo</strong> (<code>&amp;&amp; tsc</code>)</p>
+<p>Y también: <code>&quot;start:prod&quot;:&quot;npm run build:prod &amp;&amp; node build/index.js&quot;</code>, para obviar los comandos: <code>tsNode</code>, <code>start</code> y <code>transpilation</code></p>
+<p>-&gt; Ahora con <code> npm run start:prod</code> agarramos el archivos TS, hacemos el build, transpilamos y corremos el archivo JavaScript creado.</p>
+<ol start="10">
+<li>Con ESLint le ponemos normas/ reglas para que todos desarrollemos igual, sea más mantenible.</li>
+</ol>
+<hr>
+<a id="md:-¿qué-vemos-" class="tsd-anchor"></a><h2><a href="#md:-¿qué-vemos-"><img width="30" height="30" src="https://img.icons8.com/isometric/30/experimental-book-isometric.png" alt="book"/> ¿Qué vemos ?</a></h2><ul>
+<li><p>1 - <strong>Tipado de datos</strong> primitivos y no promitivos(array, enum, interface, type). <strong>BuiltIn Types</strong>: number, string, boolean, void, null, undefined. Asignación múltiple de variables con <strong>desestructuración</strong>. <strong>spread operator</strong> en array y objeto.</p>
+</li>
+<li><p>2 - <strong>condicionales</strong> (operador ternario, if, if-else, if-else if-else, swich) y <strong>bucles</strong> (for, forEach, for in, while, do while)</p>
+</li>
+<li><p>3 - manejo de errores: <strong>try-catch</strong></p>
+</li>
+<li><p>4 - <strong>funciones</strong>: parametros opcionales, varios parametros, spread operator con multiparametros, return, arrow function, funcion callback, sobrecarga de funciones, funciones asíncronas (async-await, .then() - .catch() - .finally()), funciones generadoras(yield). <strong>type</strong></p>
+</li>
+<li><p>5 - <strong>persistencia de datos</strong> en el navegador (LocalStorage-nativo de JavaSCript-, SessionStorage-nativo de JavaScript-, Cookies se trabaja manual o con librerias). Paquete npm <strong>cookie-utils</strong>: <code>npm install cookies-utils</code> (existe la libreria <strong>cookies</strong> que es para peticiones HTTP, más pensado para el Back, para un server de Express). Ejecución de <strong>eventos</strong></p>
+</li>
+<li><p>6 - <strong>POO 1</strong>: <strong>Clases</strong> (properties, methods, constructor, getter, setter, accesos: public, private). <strong>import</strong>/<strong>export</strong> para clases, funciones, constantes, modulos, etc.</p>
+</li>
+<li><p>7 - <strong>POO 2</strong>: <strong>interface</strong>, <strong>herencia</strong> (clase padre/hija, extends), <strong>polimorfismo</strong> y decoradores. TS tiene herencia unica, no multiple, pero por medio de las interfeces se puede lograr esto.</p>
+</li>
+<li><p>8 - <strong>patrones de diseño</strong> y refactorización del código</p>
+</li>
+</ul>
+<hr>
+<a id="md:--depuración-de-código" class="tsd-anchor"></a><h2><a href="#md:--depuración-de-código"><img width="40" height="40" src="https://img.icons8.com/dusk/40/bug.png" alt="bug"/>  Depuración de código</a></h2><ul>
+<li><p>En consola: <code>npm run build:prod</code>, ahora en la nueva carpeta <strong>Build</strong> además del index.js voy a tener todos los archivos correspondientes a <strong>models</strong> y ahora también los archivos <strong>.map</strong></p>
+</li>
+<li><p>Del menú de la izquierda en VSC tenemos <strong>run &amp; debbug</strong>, primero lo configuramos con <strong>create a launchjson file</strong>, elejimos <strong>Nodejs</strong> y nos crea el archivo <strong>launch.json</strong> base:</p>
+</li>
+</ul>
+<pre><code class="language-JSON"><span class="hl-1">{</span><br/><span class="hl-1">  </span><span class="hl-3">// Use IntelliSense to learn about possible attributes.</span><br/><span class="hl-1">  </span><span class="hl-3">// Hover to view descriptions of existing attributes.</span><br/><span class="hl-1">  </span><span class="hl-3">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;version&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;0.2.0&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-2">&quot;configurations&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">    {</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;type&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;node&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;request&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;launch&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;Launch Program&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;skipFiles&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">        </span><span class="hl-0">&quot;&lt;node_internals&gt;/**&quot;</span><br/><span class="hl-1">      ],</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;program&quot;</span><span class="hl-1">: </span><span class="hl-0">&quot;${file}&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">      </span><span class="hl-2">&quot;outFiles&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">        </span><span class="hl-0">&quot;${workspaceFolder}/**/*.js&quot;</span><br/><span class="hl-1">      ]</span><br/><span class="hl-1">    }</span><br/><span class="hl-1">  ]</span><br/><span class="hl-1">}</span>
+</code><button>Copy</button></pre>
+<p>Dentro de una nueva carpeta .vscode, no habria que subirla a GitHub, yo la dejo a modo de ejemplo.</p>
+<p>Al dar al <strong>run</strong>, ya marcando algun breakpoint:</p>
+<p><img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/a8d772db-666b-4be6-b94e-595f36267805" alt="image"></p>
+<p>Variables locales y globales:</p>
+<p><img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/ca283dcc-9604-4fc2-b412-ccbc56395de8" alt="image"></p>
+<p>Pudo ver el valor de una variable:</p>
+<p><img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/4e005200-f901-45d4-84b8-467d7ffdfca4" alt="image"></p>
+<p>Ejemplo de <strong>Watch</strong>:</p>
+<p><img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/41570408-2ddb-455e-b6a2-733172bdc8b4" alt="image"></p>
+<p><strong>Callstak</strong>, por donde se va ejecutando:</p>
+<p><img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/f71084a7-644e-433a-ab41-492de5c8cafe" alt="image"></p>
+<p><strong>LoadedScripts</strong>, todos los scripts que fuimos corriendo:</p>
+<p><img src="https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/assets/72580574/0b9e2b53-4f14-4340-913d-d81d3a556c38" alt="image"></p>
+<hr>
+<a id="md:-eslint" class="tsd-anchor"></a><h2><a href="#md:-eslint"><img width="40" height="40" src="https://img.icons8.com/color/40/eslint.png" alt="eslint"/> ESLint</a></h2><ul>
+<li><p>Para marcar reglas y todo el equipo programe de manera similar</p>
+</li>
+<li><p>Para instalarlo en el proyecto:: <code>npm install eslint --save-dev</code></p>
+</li>
+<li><p>Ahora en los node_modules tenemos el @ESLint, hay que configurarlo: <code>./node_modules/.bin/eslint --init</code> y respondiendo las preguntas se va configurando:</p>
+</li>
+</ul>
+<p>-How would you like to use ESLint? style</p>
+<p>-What type of modules does your project use? JavaScript modules(import/export)</p>
+<p>-Which framework does your project use? None of these</p>
+<p>-Doeas you project use TypeScript?  YEs</p>
+<p>-Where does your code run? Node</p>
+<p>-How would you like to define a style for your proyect? Use a popular style guide </p>
+<p>-Which style guide to you want to follo? Standard</p>
+<p>-What format do you want youe config file to be in? JSON</p>
+<p>Pide instalar una dependencia -&gt; le damos el ok</p>
+<p>Tnemos que tner instalada <strong>ESLint</strong> como extensión de VSC (la oficial de Microsoft).</p>
+<p>Y en la parte de <strong>rules</strong> lo configuramos:</p>
+<pre><code><span class="hl-1"> </span><span class="hl-4">rules</span><span class="hl-1">: {</span><br/><span class="hl-1">    </span><span class="hl-4">quotes</span><span class="hl-1">: [</span><span class="hl-0">&quot;error&quot;</span><span class="hl-1">, </span><span class="hl-0">&quot;double&quot;</span><span class="hl-1">],</span><br/><span class="hl-1">    </span><span class="hl-0">&quot;comma-spacing&quot;</span><span class="hl-1">: [</span><span class="hl-0">&quot;off&quot;</span><span class="hl-1">]</span><br/><span class="hl-1">  },</span>
+</code><button>Copy</button></pre>
+<p><strong>off</strong> -&gt; para quitarlo</p>
+<p><strong>warn</strong> o <strong>1</strong> -&gt; para activar al regla como un aviso</p>
+<p><strong>error</strong> o <strong>2</strong> -&gt; para activar esta regla como error</p>
+<p>En el <strong>package.json</strong> hacemos el <em>script</em>: <code>&quot;linting&quot;: &quot;eslint&quot;,</code></p>
+<p>Entonces desde: <code>ts_midu\open_bootcamp\ts-demo</code> : <code>npm run linting</code></p>
+<p>Si no hay problema con las reglas:</p>
+<p>`</p>
+<blockquote>
+<p><a href="mailto:ts-demo@1.0.0">ts-demo@1.0.0</a> linting
+eslint
+`</p>
+</blockquote>
+<p>Sino se ve el error, para solucionarlo, vamos a crear un nuevo <em>script</em>: <code>&quot;linting:fix&quot;: &quot;eslint --fix&quot;,</code> y asi nos va a sobreescribir el archivo, en lo que este mal lo sobreescribe</p>
+<hr>
+<a id="md:typedoc" class="tsd-anchor"></a><h2><a href="#md:typedoc">TYPEDOC</a></h2><p>Es una APi de documentación de todo el proyecto. Es más nuevo a JSDoc.</p>
+<ul>
+<li><p>Lo instalamos: <code>npm install --save-dev typedoc</code></p>
+</li>
+<li><p>En el <em>package.json</em> armo el script: <code>&quot;document&quot;: &quot;typedoc --out docs src&quot;,</code>, <strong>doc</strong> va a ser el directorio de salida, donde se guarda y <strong>src</strong> es lo que va a documentar. Lo corro con <code>npm run document</code></p>
+</li>
+</ul>
+<hr>
+<p><a href="https://github.com/gorkavillara/curso-typescript-05-junio/tree/tema-01-introduccion">https://github.com/gorkavillara/curso-typescript-05-junio/tree/tema-01-introduccion</a> es el repositorio en GitHub donde subieron el código por si tenemos dudas.</p>
+<hr>
+</div></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)" id="icon-chevronDown"></path></svg>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg>On This Page</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li>
+<ul>
+<li><a href="#md:computer-curso-de-typescript-de-openbootcamp"><span>:computer: <wbr/>Curso de <wbr/>Type<wbr/>Script de <wbr/>Open<wbr/>Bootcamp</span></a></li>
+<li>
+<ul>
+<li><a href="#md:-herramientas"><span> <wbr/>Herramientas</span></a></li>
+<li><a href="#md:-¿qué-hacemos"><span> ¿<wbr/>Qué hacemos?</span></a></li>
+<li><a href="#md:-¿qué-vemos-"><span> ¿<wbr/>Qué vemos ?</span></a></li>
+<li><a href="#md:--depuración-de-código"><span>  <wbr/>Depuración de código</span></a></li>
+<li><a href="#md:-eslint"><span> ESLint</span></a></li>
+<li><a href="#md:typedoc"><span>TYPEDOC</span></a></li></ul></li></ul></li></ul></div></details></div>
+<div class="site-menu">
+<nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)"></path></g></svg><span>ts-<wbr/>demo</span></a>
+<ul class="tsd-small-nested-navigation"></ul></nav></div></div></div>
+<div class="tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div></body></html>
