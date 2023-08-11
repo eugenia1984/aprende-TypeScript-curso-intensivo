@@ -12,7 +12,7 @@ const message: string = greet('John');
 console.log(message); // Output: "Hello, John!"
 ```
 
-Further Reading: TypeScript Official Website
+Further Reading: [TypeScript Official Website](https://www.typescriptlang.org/)
 
 ---
 
@@ -20,7 +20,7 @@ Further Reading: TypeScript Official Website
 
 Answer: Static typing in TypeScript enables specifying data types for variables, function parameters, and return values during development. This helps catch type-related errors early, improving code quality and maintainability. The benefits include better code documentation, enhanced tooling support, and improved developer productivity.
 
-Further Reading: TypeScript Official Handbook — Basic Types
+Further Reading: [TypeScript Official Handbook — Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 
 ---
 
@@ -41,7 +41,7 @@ const message: string = greet(john);
 console.log(message); // Output: "Hello, John! You are 30 years old."
 ```
 
-Further Reading: TypeScript Official Handbook — Interfaces
+Further Reading: [TypeScript Official Handbook — Interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html)
 
 ---
 
@@ -49,7 +49,7 @@ Further Reading: TypeScript Official Handbook — Interfaces
 
 Answer: TypeScript provides several benefits, including static typing, better code analysis and tooling support, improved code readability, early error detection, easier code refactoring, and enhanced code documentation. It also enables developers to write more maintainable and scalable applications.
 
-Further Reading: TypeScript Official Website — Why TypeScript?
+Further Reading: [TypeScript Official Website — Why TypeScript?](https://www.typescriptlang.org/docs/handbook/why-typescript.html)
 
 ---
 
@@ -66,7 +66,7 @@ const john: Person = { name: 'John' };
 const jane: Person = { name: 'Jane', age: 25 };
 ```
 
-Further Reading: TypeScript Official Handbook — Interfaces
+Further Reading: [TypeScript Official Handbook — Interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html)
 
 ---
 
@@ -82,7 +82,7 @@ printId(123); // Output: "ID: 123"
 printId('abc'); // Output: "ID: abc"
 ```
 
-Further Reading: TypeScript Official Handbook — Union Types
+Further Reading: [TypeScript Official Handbook — Union Types](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html)
 
 ---
 
@@ -96,7 +96,7 @@ let numberLength: number = <number>length; // Using <type> syntax
 let stringLength: number = length as number; // Using "as type" syntax
 ```
 
-Further Reading: TypeScript Official Handbook — Type Assertions
+Further Reading: [TypeScript Official Handbook — Type Assertions](https://www.typescriptlang.org/docs/handbook/basic-types.html#type-assertions)
 
 ---
 
@@ -115,7 +115,7 @@ greet('Jane', 'Hi'); // Output: "Hi, Jane!"
 greet('Tom', 'Hey', 3); // Output: "Hey, Tom!", "Hey, Tom!", "Hey, Tom!"
 ```
 
-Further Reading: TypeScript Official Handbook — Functions
+Further Reading: [TypeScript Official Handbook — Functions](https://www.typescriptlang.org/docs/handbook/functions.html)
 
 ---
 
@@ -131,7 +131,7 @@ const result1 = identity<number>(42); // Explicitly specifying the type
 const result2 = identity('hello'); // Inferring the type
 ```
 
-Further Reading: TypeScript Official Handbook — Generics
+Further Reading: [TypeScript Official Handbook — Generics](https://www.typescriptlang.org/docs/handbook/generics.html)
 
 ---
 
@@ -147,7 +147,7 @@ interface Person {
 type PersonKeys = keyof Person; // "name" | "age"
 ```
 
-Further Reading: TypeScript Official Handbook — Index Types
+Further Reading: [TypeScript Official Handbook — Index Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#index-types)
 
 ---
 
@@ -188,7 +188,7 @@ greet(john); // Output: "Hello, John!"
 greet('Jane'); // Output: "Hello, Jane!"
 ```
 
-Further Reading: TypeScript Official Handbook — Type Guards
+Further Reading: [TypeScript Official Handbook — Type Guards](https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards)
 
 ---
 
@@ -205,9 +205,9 @@ function add(a: number, b: number): number {
 type AddReturnType = ReturnType<typeof add>; // number
 ```
 
-In this example, ReturnType is a conditional type that infers the return type of a function.
+In this example, ``ReturnType`` is a conditional type that infers the return type of a function.
 
-Further Reading: TypeScript Official Handbook — Conditional Types
+Further Reading: [TypeScript Official Handbook — Conditional Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#conditional-types)
 
 ---
 
@@ -225,9 +225,9 @@ const john: Person = { name: 'John', age: 30 };
 const johnWithOptionalProperties: PersonWithOptionalProperties = { name: 'John' };
 ```
 
-In this example, PersonWithOptionalProperties is a mapped type that makes all properties of Person optional.
+In this example, ``PersonWithOptionalProperties`` is a mapped type that makes all properties of ``Person`` optional.
 
-Further Reading: TypeScript Official Handbook — Mapped Types
+Further Reading: [TypeScript Official Handbook — Mapped Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types)
 
 ---
 
@@ -244,9 +244,9 @@ type PartialPerson = Partial<Person>;
 const john: PartialPerson = { name: 'John' };
 ```
 
-In this example, PartialPerson is a type with optional properties from the Person interface.
+In this example, ``PartialPerson`` is a type with optional properties from the Person interface.
 
-Further Reading: TypeScript Official Handbook — Utility Types
+Further Reading: [TypeScript Official Handbook — Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)
 
 ---
 
@@ -263,9 +263,9 @@ const john: Readonly<Person> = { name: 'John', age: 30 };
 john.age = 31; // Error: Cannot assign to 'age' because it is a read-only property.
 ```
 
-In this example, the age property can be modified, but the name property is read-only.
+In this example, the ``age`` property can be modified, but the ``name`` property is read-only.
 
-Further Reading: TypeScript Official Handbook — Utility Types
+Further Reading: [TypeScript Official Handbook — Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)
 
 ---
 
@@ -294,7 +294,7 @@ type Result = ValueRemapped<'a' | 'b' | 'c'>; // Result: 'x' | 'y' | 'z'
 In this example, the values ‘a’, ‘b’, and ‘c’ are remapped to ‘x’, ‘y’, and ‘z’, respectively.
 ```
 
-Further Reading: TypeScript Official Handbook — Mapped Types
+Further Reading: [TypeScript Official Handbook — Mapped Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types)
 
 ---
 
@@ -312,9 +312,9 @@ type PersonInfo = Pick<Person, 'name' | 'age'>;
 const john: PersonInfo = { name: 'John', age: 30 };
 ```
 
-In this example, PersonInfo is a type containing only the 'name' and 'age' properties from the Person interface.
+In this example, ``PersonInfo`` is a type containing only the 'name' and 'age' properties from the ``Person`` interface.
 
-Further Reading: TypeScript Official Handbook — Utility Types
+Further Reading: [TypeScript Official Handbook — Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys)
 
 ---
 
@@ -332,9 +332,9 @@ type PersonWithoutCity = Omit<Person, 'city'>;
 const john: PersonWithoutCity = { name: 'John', age: 30 };
 ```
 
-In this example, PersonWithoutCity is a type that excludes the 'city' property from the Person interface.
+In this example, ``PersonWithoutCity`` is a type that excludes the 'city' property from the Person interface.
 
-Further Reading: TypeScript Official Handbook — Utility Types
+Further Reading: [TypeScript Official Handbook — Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys)
 
 ---
 
@@ -353,9 +353,9 @@ type MappedConditional<T> = {
 const john: MappedConditional<Person> = { name: 'John', age: '30' };
 ```
 
-In this example, MappedConditional is a conditional mapped type that converts number properties of Person to strings.
+In this example, ``MappedConditional`` is a conditional mapped type that converts number properties of ``Person`` to strings.
 
-Further Reading: TypeScript Official Handbook — Mapped Types
+Further Reading: [TypeScript Official Handbook — Mapped Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#conditional-types)
 
 ---
 
@@ -373,9 +373,9 @@ type IsNameKey = CheckKey<Person, 'name'>; // Result: true
 type IsCityKey = CheckKey<Person, 'city'>; // Result: false
 ```
 
-In this example, CheckKey is a conditional type that checks if a provided key is 'name'.
+In this example, ``CheckKey`` is a conditional type that checks if a provided key is 'name'.
 
-Further Reading: TypeScript Official Handbook — keyof Type Operator, TypeScript Official Handbook — in Operator
+Further Reading: [TypeScript Official Handbook — keyof Type Operator](https://www.typescriptlang.org/docs/handbook/advanced-types.html#keyof-type-operator), [TypeScript Official Handbook — in Operator](https://www.typescriptlang.org/docs/handbook/advanced-types.html#the-in-operator)
 
 ---
 
@@ -390,9 +390,9 @@ const primary: PrimaryColors = 'red'; // Okay
 const invalidColor: PrimaryColors = 'green'; // Error: Type '"green"' is not assignable to type 'PrimaryColors'.
 ```
 
-In this example, PrimaryColors is a type that excludes the 'green' and 'blue' colors from the Color union.
+In this example, ``PrimaryColors`` is a type that excludes the 'green' and 'blue' colors from the ``Color`` union.
 
-Further Reading: TypeScript Official Handbook — Utility Types
+Further Reading: [TypeScript Official Handbook — Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html#excludetype-excludedunion)
 
 ---
 
@@ -406,9 +406,9 @@ type GreetJohn = Greeting<'John'>; // Result: "Hello, John!"
 type GreetJane = Greeting<'Jane'>; // Result: "Hello, Jane!"
 ```
 
-In this example, Greeting is a template literal type that generates greetings based on the provided name.
+In this example, ``Greeting`` is a template literal type that generates greetings based on the provided name.
 
-Further Reading: TypeScript Official Handbook — Template Literal Types
+Further Reading: [TypeScript Official Handbook — Template Literal Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#template-literal-types)
 
 ---
 
@@ -424,9 +424,9 @@ function add(a: number, b: number): number {
 type AddReturnType = ReturnType<typeof add>; // Result: number
 ```
 
-In this example, ReturnType is a conditional type that infers the return type of a function using the "infer" keyword.
+In this example, ``ReturnType`` is a conditional type that infers the return type of a function using the "infer" keyword.
 
-Further Reading: TypeScript Official Handbook — Conditional Types
+Further Reading: [TypeScript Official Handbook — Conditional Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#conditional-types)
 
 ---
 
@@ -444,9 +444,9 @@ const john = { name: 'John', age: 30 };
 type JohnType = typeof john; // Result: { name: string, age: number }
 ```
 
-In the first example, PersonKeys is a type that represents the union of keys of the Person interface. In the second example, JohnType is a type that represents the type of the john object.
+In the first example, ``PersonKeys`` is a type that represents the union of keys of the Person interface. In the second example, ``JohnType`` is a type that represents the type of the ``john`` object.
 
-Further Reading: TypeScript Official Handbook — keyof Type Operator, TypeScript Official Handbook — typeof Type Operator
+Further Reading:  [TypeScript Official Handbook — keyof Type Operator](https://www.typescriptlang.org/docs/handbook/advanced-types.html#keyof-type-operator), [TypeScript Official Handbook — typeof Type Operator](https://www.typescriptlang.org/docs/handbook/advanced-types.html#typeof-type-operator)
 
 ---
 
@@ -470,9 +470,9 @@ const config = getConfig();
 // }
 ```
 
-In this example, the config object is treated as a constant object with readonly properties due to the as const assertion.
+In this example, the ``config`` object is treated as a constant object with ``readonly`` properties due to the ``as const`` assertion.
 
-Further Reading: TypeScript Official Handbook — Literal Type Widening
+Further Reading: [TypeScript Official Handbook — Literal Type Widening](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions)
 
 ---
 
@@ -511,9 +511,9 @@ employee.showSalary(); // Output: "My salary is 50000."
 console.log(employee.salary); // Error: Property 'salary' is private and only accessible within class 'Employee'.
 ```
 
-In this example, the name property has a "private" access modifier, and the age property has a "protected" access modifier. The salary property is private to the Employee class.
+In this example, the ``name`` property has a "private" access modifier, and the age property has a "protected" access modifier. The ``salary`` property is private to the ``Employee`` class.
 
-Further Reading: TypeScript Official Handbook — Classes
+Further Reading: [TypeScript Official Handbook — Classes](https://www.typescriptlang.org/docs/handbook/classes.html)
 
 ---
 
@@ -541,9 +541,9 @@ type NumberProperties = FilterProperties<Person, number>;
 // }
 ```
 
-In this example, FilterProperties is a conditional mapped type that filters properties of Person based on their value types.
+In this example, ``FilterProperties`` is a conditional mapped type that filters properties of ``Person`` based on their value types.
 
-Further Reading: TypeScript Official Handbook — Conditional Types
+Further Reading: [TypeScript Official Handbook — Conditional Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#conditional-types)
 
 ---
 
@@ -569,9 +569,9 @@ const myObj = new MyObject('example');
 myObj.print(); // Output: "Object: example"
 ```
 
-In this example, the Printable class acts as a mixin that adds the print method to the MyObject class.
+In this example, the ``Printable`` class acts as a mixin that adds the print method to the ``MyObject`` class.
 
-Further Reading: TypeScript Official Handbook — Mixins
+Further Reading: [TypeScript Official Handbook — Mixins](https://www.typescriptlang.org/docs/handbook/mixins.html)
 
 ---
 
@@ -590,9 +590,9 @@ const john: Person = { name: 'John', age: 30 };
 console.log(john); // Output: { name: 'John', age: 30 }
 ```
 
-In this example, the compiler merges the two Person interfaces into a single definition, allowing john to have both name and age properties.
+In this example, the compiler merges the two ``Person`` interfaces into a single definition, allowing john to have both ``name`` and ``age`` properties.
 
-Further Reading: TypeScript Official Handbook — Declaration Merging
+Further Reading: [TypeScript Official Handbook — Declaration Merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
 
 ---
 
@@ -620,15 +620,15 @@ const fruit = 'pear';
 const count = data[fruit]; // Error: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ apple: number; banana: number; }'.
 ```
 
-In this example, enabling “noUncheckedIndexedAccess” would raise an error since data[fruit] might be undefined or null.
+In this example, enabling “noUncheckedIndexedAccess” would raise an error since ``data[fruit]`` might be undefined or null.
 
-Further Reading: TypeScript Compiler Options
+Further Reading: [TypeScript Compiler Options](https://www.typescriptlang.org/tsconfig#noUncheckedIndexedAccess)
 
 ---
 
 ## 31- What are “decorators” in TypeScript? Provide an example.
 
-Answer: Decorators are a TypeScript feature that allows you to modify the behavior of classes, methods, or properties. They are declared using the @decoratorName syntax and executed at runtime. Here's an example of a simple class decorator:
+Answer: Decorators are a TypeScript feature that allows you to modify the behavior of classes, methods, or properties. They are declared using the ``@decoratorName`` syntax and executed at runtime. Here's an example of a simple class decorator:
 
 ```TypeScript
 function MyClassDecorator<T extends { new (...args: any[]): {} }>(constructor: T) {
@@ -649,9 +649,9 @@ console.log(myClassInstance.hello); // Output: "overridden"
 console.log((myClassInstance as any).newProperty); // Output: "decorated property"
 ```
 
-In this example, the MyClassDecorator function is a class decorator that modifies the behavior of the MyClass class.
+In this example, the ``MyClassDecorator`` function is a class decorator that modifies the behavior of the ``MyClass`` class.
 
-Further Reading: TypeScript Official Handbook — Decorators
+Further Reading: [TypeScript Official Handbook — Decorators](https://www.typescriptlang.org/docs/handbook/decorators.html)
 
 ---
 
@@ -675,9 +675,9 @@ const circle = new Circle(5);
 console.log(circle.area()); // Output: 78.53981633974483
 ```
 
-In this example, the Shape class is an abstract class with an abstract method area(). The Circle class extends the Shape class and implements the area() method.
+In this example, the ``Shape`` class is an abstract class with an abstract method ``area()``. The ``Circle`` class extends the Shape class and implements the ``area()`` method.
 
-Further Reading: TypeScript Official Handbook — Abstract Classes
+Further Reading: [TypeScript Official Handbook — Abstract Classes](https://www.typescriptlang.org/docs/handbook/classes.html#abstract-classes)
 
 ---
 
@@ -691,11 +691,11 @@ type CheckString = IsString<string>; // Result: true
 type CheckNumber = IsString<number>; // Result: false
 ```
 
-In this example, the IsString conditional type checks if the provided type is a string.
+In this example, the ``IsString`` conditional type checks if the provided type is a string.
 
 Conditional types are useful when you want to create type-safe mappings or filters based on the types of other values.
 
-Further Reading: TypeScript Official Handbook — Conditional Types
+Further Reading: [TypeScript Official Handbook — Conditional Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#conditional-types)
 
 ---
 
@@ -715,9 +715,9 @@ console.log(john.name); // Output: "John"
 john.name = 'Jane'; // Error: Cannot assign to 'name' because it is a read-only property.
 ```
 
-In this example, the name property of the Person class is marked as read-only.
+In this example, the ``name`` property of the ``Person`` class is marked as read-only.
 
-Further Reading: TypeScript Official Handbook — Classes
+Further Reading: [TypeScript Official Handbook — Classes](https://www.typescriptlang.org/docs/handbook/classes.html#readonly-modifier)
 
 ---
 
@@ -738,9 +738,9 @@ const person = {
 // }
 ```
 
-In this example, the fruits array and person object have their types inferred as readonly tuples and objects, respectively.
+In this example, the ``fruits`` array and ``person`` object have their types inferred as readonly tuples and objects, respectively.
 
-Further Reading: TypeScript Official Handbook — Literal Types
+Further Reading: [TypeScript Official Handbook — Literal Types](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions)
 
 ---
 
@@ -765,9 +765,9 @@ console.log(greet('John')); // Output: "Hello, John!"
 console.log(goodbye('John')); // Output: "Goodbye, John!"
 ```
 
-In this example, we augment the ‘external-library’ module by adding the goodbye function.
+In this example, we augment the ‘external-library’ module by adding the ``goodbye`` function.
 
-Further Reading: TypeScript Official Handbook — Module Augmentation
+Further Reading: [TypeScript Official Handbook — Module Augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation)
 
 ---
 
@@ -783,9 +783,9 @@ interface Person {
 type PersonKeys = keyof Person; // Result: "name" | "age"
 ```
 
-In this example, PersonKeys is a type that represents the union of keys of the Person interface.
+In this example, ``PersonKeys`` is a type that represents the union of keys of the ``Person`` interface.
 
-Further Reading: TypeScript Official Handbook — keyof Type Operator
+Further Reading: [TypeScript Official Handbook — keyof Type Operator](https://www.typescriptlang.org/docs/handbook/advanced-types.html#keyof-type-operator)
 
 ---
 
@@ -805,9 +805,9 @@ printType(true); // Output: "The type of true is boolean."
 printType('Hello'); // Output: "The type of Hello is string."
 ```
 
-In this example, the NameType type is inferred as string because the name variable has a string value.
+In this example, the ``NameType`` type is inferred as ``string`` because the name variable has a string value.
 
-Further Reading: TypeScript Official Handbook — typeof Type Operator
+Further Reading: [TypeScript Official Handbook — typeof Type Operator](https://www.typescriptlang.org/docs/handbook/advanced-types.html#typeof-type-operator)
 
 ---
 
@@ -827,9 +827,9 @@ const value = data['banana'];
 console.log(value); // Output: 2
 ```
 
-In this example, the Dictionary interface allows you to define objects with string keys and number values.
+In this example, the ``Dictionary`` interface allows you to define objects with string keys and number values.
 
-Further Reading: TypeScript Official Handbook — Indexable Types
+Further Reading: [TypeScript Official Handbook — Indexable Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#indexable-types)
 
 ---
 
@@ -852,7 +852,7 @@ printLength('Hello'); // Output: "The length of the string is 5."
 printLength(42); // Output: "The value is a number: 42."
 ```
 
-In this example, the isString function is a type predicate that checks if the value is a string.
+In this example, the ``isString`` function is a type predicate that checks if the value is a string.
 
 ---
 
