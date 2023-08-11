@@ -1,6 +1,6 @@
 # <img width="48" height="48" src="https://img.icons8.com/color/48/typescript.png" alt="typescript"/> Aprende TypeScript: curso intensivo
 
-El curso de **TypeScript** con **Midu**
+El curso de **TypeScript** con **Midu** y otros cursos más de TypeScript.
 
 ---
 
@@ -24,6 +24,8 @@ Dentro de la carpeta [<img width="40" height="40" src="https://img.icons8.com/ex
 
 - [<img width="20" height="20" src="https://img.icons8.com/dusk/20/monitor--v1.png" alt="monitor--v1"/> Todo sobre Patrones de Diseño con JavaScript y TypeScript](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/tree/main/patrones_disenio), el curso de Udemy de Alvaro Chirou
 
+- [<img width="20" height="20" src="https://img.icons8.com/dusk/20/monitor--v1.png" alt="monitor--v1"/> 40 preguntas de TypeScript en entrevistas de trabajo](https://github.com/eugenia1984/aprende-TypeScript-curso-intensivo/blob/main/advanced_ts_interview_questions.md)
+  
 ---
 
 ## Tecnologías 🛠️
