@@ -43,6 +43,14 @@ En la carpeta **singleton**
 
 ## Sección 3: Patrón Strategy
 
+- Strategy en JavaScript
+
+- Aplicación de Strategy en un caso real
+
+- Strategy en TypeScript
+
+- Desafio aplicacion descuentos
+
 ---
 
 ## Sección 4: Patrón observer
