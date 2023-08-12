@@ -85,9 +85,23 @@ En la carpeta **singleton**
 
 ## Sección 7: State
 
+- Patron State
+
+- State en una escena de juego
+
+- Aplicacion practica del State 
+
+- Ejercicio de codificacion: implementacion del patron State en un reproductor de musica
+
 ---
 
 ## Sección 8: Factory, Adapter, Aprobador
+
+- Patron Factory
+
+- Patron Adapter
+
+- Patron Aprobador
 
 ---
 
