@@ -31,6 +31,12 @@ En la carpeta **singleton**
 
 ### ¿Que se ve?
 
+- Explicacion de Singleton
+
+- Ejemplo en JavaScript que simula una conexion a una base de datos
+
+- Ejemplo en TypeScript
+
 ---
 
 ## Sección 3: Patrón Strategy
