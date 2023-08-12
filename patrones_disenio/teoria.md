@@ -63,6 +63,10 @@ En la carpeta **singleton**
 
 ## Sección 5: Patrón decorator
 
+- Patrón Decorator
+
+- Decorator en TypeScript
+
 ---
 
 ## Sección 6: Patrón Builder
