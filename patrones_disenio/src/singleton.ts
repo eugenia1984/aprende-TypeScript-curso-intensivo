@@ -6,7 +6,7 @@
 // accesible solo dentro de la clase
 class MySingleton {
   // atributo estatico privado, donde alamcena la unica instancia del singleon
-  private static instance: MySingleton; 
+  private static instance: MySingleton;
   private data: string;
 
   // Constructor privado, evita se cree una nueva instancia fuera de la misma
@@ -16,14 +16,14 @@ class MySingleton {
 
   // Para obtener la instancia unica del Singleton
   public static getInstance(): MySingleton {
-    if(!MySingleton.instance) {
+    if (!MySingleton.instance) {
       MySingleton.instance = new MySingleton()
     }
     return MySingleton.instance
   }
 
   // Setter y Getter, para obtener y modificar
-  public setData(newData:string): void {
+  public setData(newData: string): void {
     this.data = newData
   }
 
@@ -34,3 +34,11 @@ class MySingleton {
 
 const singletonInstance1 = MySingleton.getInstance()
 console.log(singletonInstance1.getData())
+const singletonInstance2 = MySingleton.getInstance()
+console.log(singletonInstance2.getData())
+
+console.log('- - - - - - - - - - - - - - - - -')
+
+singletonInstance1.setData('UPDATE data') // actualizo a ambas instancias
+console.log(singletonInstance1.getData()) // UPDATE data
+console.log(singletonInstance2.getData()) // UPDATE data
