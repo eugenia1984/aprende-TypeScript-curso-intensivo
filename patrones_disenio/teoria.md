@@ -55,6 +55,10 @@ En la carpeta **singleton**
 
 ## Sección 4: Patrón observer
 
+- Patrón observer
+
+- Observadores en un chat
+
 ---
 
 ## Sección 5: Patrón decorator
