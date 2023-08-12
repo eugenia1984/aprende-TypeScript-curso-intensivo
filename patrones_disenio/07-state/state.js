@@ -111,7 +111,8 @@ class EstadoDetenido extends EstadoReproductor{
 }
 
 const reproductorMusica = new ReproductorMusica()
-reproductorMusica.reproducir()
+// se delega la llamada al metodo correspondiente del estado actual
+reproductorMusica.reproducir() 
 reproductorMusica.reproducir()
 reproductorMusica.pausar()
 reproductorMusica.detener()
