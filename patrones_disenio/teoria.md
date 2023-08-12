@@ -67,9 +67,19 @@ En la carpeta **singleton**
 
 - Decorator en TypeScript
 
+-  Ejercicio de codificacion: Aplicacion de patrón Observador en un sistema de notificaciones
+
 ---
 
 ## Sección 6: Patrón Builder
+
+- Patrón Builder
+
+- Builder en un caso práctico - generando informes
+
+- Builder en TypeScript
+
+- Ejercicio de codificacion: Creacion de un formulario con Patron Builder
 
 ---
 
