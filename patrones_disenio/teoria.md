@@ -37,6 +37,8 @@ En la carpeta **singleton**
 
 - Ejemplo en TypeScript
 
+- Desafio: Juego de la memoria, en JavaScript
+- 
 ---
 
 ## Sección 3: Patrón Strategy
