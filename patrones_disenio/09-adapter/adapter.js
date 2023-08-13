@@ -37,4 +37,4 @@ const reproductorAAC = new ReproductoAAC()
 const adaptadorAAC = new AdapterACC(reproductorAAC)
 
 reproductorMP3.reproducirArchivoMP3('cancion.mp3')
-reproductorAAC.reproducirArchivoAAC('cancion.aac')
+adaptadorAAC.reproducirArchivoAAC('cancion.aac')
