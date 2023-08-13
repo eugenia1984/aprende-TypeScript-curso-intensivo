@@ -112,8 +112,26 @@ class EstadoDetenido extends EstadoReproductor{
 
 const reproductorMusica = new ReproductorMusica()
 // se delega la llamada al metodo correspondiente del estado actual
-reproductorMusica.reproducir() 
-reproductorMusica.reproducir()
-reproductorMusica.pausar()
-reproductorMusica.detener()
-reproductorMusica.pausar()
+// reproductorMusica.reproducir() 
+// reproductorMusica.reproducir()
+// reproductorMusica.pausar()
+// reproductorMusica.detener()
+// reproductorMusica.pausar()
+
+// Para aplicar en el HTML
+// Ubico los tres botones
+const reproducirBtn = document.getElementById('reproducir-btn')
+const pausarBtn = document.getElementById('pausar-btn')
+const detenerBtn = document.getElementById('detener-btn')
+
+reproducirBtn.addEventListener('click', () => {
+  reproductorMusica.reproducir()
+})
+
+pausarBtn.addEventListener('click', () => {
+  reproductorMusica.pausar()
+})
+
+detenerBtn.addEventListener('click', () => {
+  reproductorMusica.detener()
+})
