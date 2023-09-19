@@ -466,7 +466,7 @@ const avengers = new Avenger('Spidey', 80)
 También puedo tener interfaces, lo que si al tener los atributos/propiedades en una interfaz, no los puedo inicializar, ni puedo agregar una nueva propiedad que no este en al interfaz
 
 
-TS tiene HERENCIA MULTIPLE; s epuede implementar más de una Interface.
+TS tiene HERENCIA MULTIPLE; se puede implementar más de una Interface.
 
 Puedo declarar una rchivo **types.d.ts**, con **.d** por definicion, y ahi tener mis interfaces o types que voy a implementar en mis clases.
 
