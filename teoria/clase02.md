@@ -297,7 +297,7 @@ Depende. En la documentación de TypeScript nombra la diferencia de lo de poder 
 
 La **interfazce** siempre habla de un **objeto**, nunca podriamso hacer esto de : `type RGB:number[]`, no podria hacer un array, siempre es un objeto. Con una interface tampoco podría hacer esto: `type HeroId = ${number}-${number}` para luego poder utilizar este tipo en un atributo id de una interface Hero.
 
-En general siemre intertar utilizar **type**, se entiende bien, son versatiles, pero cuando se trabaja con **object** o **class** ahi si puede ser que se necesite **interface**.
+En general siempre intertar utilizar **type**, se entiende bien, son versatiles, pero cuando se trabaja con **object** o **class** ahi si puede ser que se necesite **interface**.
 
 ---
 
